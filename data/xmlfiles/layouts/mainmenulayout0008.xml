@@ -1,0 +1,2934 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-mainmenulayout name="Enter Hero Name">
+	<onAcceptEvent type="topLevelEvent"/>
+	<onCancelEvent type="topLevelEvent">
+		<event type="insertComment" comment="If none of the options are selected (currently selecting characters)\n  -&gt; Then move the cursor to confirm\nElse if one of the options other than cancel is selected\n  -&gt; Then move the cursor to cancel\nElse\n  -&gt; Same event as saCancel-&gt;OnSelected"/>
+		<event type="conditionalBranch">
+			<conditions conditionsToMatch="none" executeCustomHandlerIfConditionsNotMet="true">
+				<condition type="currentHighlightedArea" objectName="saCancel"/>
+				<condition type="currentHighlightedArea" objectName="saClear"/>
+				<condition type="currentHighlightedArea" objectName="saConfirm"/>
+				<condition type="currentHighlightedArea" objectName="saReset"/>
+			</conditions>
+			<onTrueEvents>
+				<event type="playSystemSoundEffect" effect="Cursor"/>
+				<event type="changeSelectedArea" objectName="saConfirm"/>
+			</onTrueEvents>
+			<onFalseEvents>
+				<event type="conditionalBranch">
+					<conditions conditionsToMatch="none" executeCustomHandlerIfConditionsNotMet="true">
+						<condition type="currentHighlightedArea" objectName="saCancel"/>
+					</conditions>
+					<onTrueEvents>
+						<event type="playSystemSoundEffect" effect="Cancel"/>
+						<event type="changeSelectedArea" objectName="saCancel"/>
+					</onTrueEvents>
+					<onFalseEvents>
+						<event type="stringOperation" stringToChange="single" stringID="0" operation="set" operand="value" value=""/>
+						<event type="exitMenu"/>
+					</onFalseEvents>
+				</event>
+			</onFalseEvents>
+		</event>
+	</onCancelEvent>
+	<onLoadEvent type="topLevelEvent">
+		<event type="stringOperation" stringToChange="single" stringID="0" operation="set" operand="characterName" characterID="0" characterReferencedInVariable="true"/>
+	</onLoadEvent>
+	<onLeaveEvent type="topLevelEvent"/>
+	<onUpArrowEvent type="topLevelEvent"/>
+	<onDownArrowEvent type="topLevelEvent"/>
+	<onLeftArrowEvent type="topLevelEvent"/>
+	<onRightArrowEvent type="topLevelEvent"/>
+	<navigation wrapHorizontally="false" wrapVertically="false">
+		<object name="sa_A" row="0" column="0"/>
+		<object name="sa_F" row="1" column="0"/>
+		<object name="sa_K" row="2" column="0"/>
+		<object name="sa_P" row="3" column="0"/>
+		<object name="sa_U" row="4" column="0"/>
+		<object name="sa_Z" row="5" column="0"/>
+		<object name="sa_SemiColon" row="6" column="0"/>
+		<object name="sa_B" row="0" column="1"/>
+		<object name="sa_G" row="1" column="1"/>
+		<object name="sa_L" row="2" column="1"/>
+		<object name="sa_Q" row="3" column="1"/>
+		<object name="sa_V" row="4" column="1"/>
+		<object name="sa_Apostrophe" row="6" column="1"/>
+		<object name="sa_C" row="0" column="2"/>
+		<object name="sa_H" row="1" column="2"/>
+		<object name="sa_M" row="2" column="2"/>
+		<object name="sa_R" row="3" column="2"/>
+		<object name="sa_W" row="4" column="2"/>
+		<object name="sa_Colon" row="6" column="2"/>
+		<object name="sa_D" row="0" column="3"/>
+		<object name="sa_I" row="1" column="3"/>
+		<object name="sa_N" row="2" column="3"/>
+		<object name="sa_S" row="3" column="3"/>
+		<object name="sa_X" row="4" column="3"/>
+		<object name="sa_Quote" row="6" column="3"/>
+		<object name="sa_E" row="0" column="4"/>
+		<object name="sa_J" row="1" column="4"/>
+		<object name="sa_O" row="2" column="4"/>
+		<object name="sa_T" row="3" column="4"/>
+		<object name="sa_Y" row="4" column="4"/>
+		<object name="sa_Comma" row="6" column="4"/>
+		<object name="sa_a" row="0" column="5"/>
+		<object name="sa_f" row="1" column="5"/>
+		<object name="sa_k" row="2" column="5"/>
+		<object name="sa_p" row="3" column="5"/>
+		<object name="sa_u" row="4" column="5"/>
+		<object name="sa_z" row="5" column="5"/>
+		<object name="sa_Period" row="6" column="5"/>
+		<object name="sa_b" row="0" column="6"/>
+		<object name="sa_g" row="1" column="6"/>
+		<object name="sa_l" row="2" column="6"/>
+		<object name="sa_q" row="3" column="6"/>
+		<object name="sa_v" row="4" column="6"/>
+		<object name="sa_LessThan" row="6" column="6"/>
+		<object name="sa_c" row="0" column="7"/>
+		<object name="sa_h" row="1" column="7"/>
+		<object name="sa_m" row="2" column="7"/>
+		<object name="sa_r" row="3" column="7"/>
+		<object name="sa_w" row="4" column="7"/>
+		<object name="sa_GreaterThan" row="6" column="7"/>
+		<object name="sa_d" row="0" column="8"/>
+		<object name="sa_i" row="1" column="8"/>
+		<object name="sa_n" row="2" column="8"/>
+		<object name="sa_s" row="3" column="8"/>
+		<object name="sa_x" row="4" column="8"/>
+		<object name="sa_Slash" row="6" column="8"/>
+		<object name="sa_e" row="0" column="9"/>
+		<object name="sa_j" row="1" column="9"/>
+		<object name="sa_o" row="2" column="9"/>
+		<object name="sa_t" row="3" column="9"/>
+		<object name="sa_y" row="4" column="9"/>
+		<object name="sa_QuestionMark" row="6" column="9"/>
+		<object name="sa_1" row="0" column="10"/>
+		<object name="sa_6" row="1" column="10"/>
+		<object name="sa_BackQuote" row="2" column="10"/>
+		<object name="sa_DollarSign" row="3" column="10"/>
+		<object name="sa_OpenParenthesis" row="4" column="10"/>
+		<object name="sa_Equals" row="5" column="10"/>
+		<object name="sa_BackSlash" row="6" column="10"/>
+		<object name="sa_2" row="0" column="11"/>
+		<object name="sa_7" row="1" column="11"/>
+		<object name="sa_Tilda" row="2" column="11"/>
+		<object name="sa_Percent" row="3" column="11"/>
+		<object name="sa_CloseParenthesis" row="4" column="11"/>
+		<object name="sa_OpenBracket" row="5" column="11"/>
+		<object name="sa_Pipe" row="6" column="11"/>
+		<object name="sa_3" row="0" column="12"/>
+		<object name="sa_8" row="1" column="12"/>
+		<object name="sa_Exclamation" row="2" column="12"/>
+		<object name="sa_Caret" row="3" column="12"/>
+		<object name="sa_Underscore" row="4" column="12"/>
+		<object name="sa_CloseBracket" row="5" column="12"/>
+		<object name="sa_4" row="0" column="13"/>
+		<object name="sa_9" row="1" column="13"/>
+		<object name="sa_AtSymbol" row="2" column="13"/>
+		<object name="sa_Ampersand" row="3" column="13"/>
+		<object name="sa_Minus" row="4" column="13"/>
+		<object name="sa_OpenCurlyBrace" row="5" column="13"/>
+		<object name="sa_Space" row="6" column="13"/>
+		<object name="sa_5" row="0" column="14"/>
+		<object name="sa_0" row="1" column="14"/>
+		<object name="sa_Pound" row="2" column="14"/>
+		<object name="sa_Asterisk" row="3" column="14"/>
+		<object name="sa_Plus" row="4" column="14"/>
+		<object name="sa_CloseCurlyBrace" row="5" column="14"/>
+		<object name="sa_Backspace" row="6" column="14"/>
+	</navigation>
+	<object type="frame" objectName="frmFace" x="0" y="0" width="116" height="116">
+		<object type="image" objectName="imgFace" x="10" y="10" scaledToWidth="0" scaledToHeight="0" saveSlotID="0" scaled="false" imageType="party member" memberID="4" graphic="face"/>
+	</object>
+	<object type="frame" objectName="frmOptions" x="116" y="54" width="524" height="62">
+		<object type="selectable area" objectName="saReset" x="19" y="10" width="100" height="42">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saConfirm"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saClear"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent"/>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_A"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="set" operand="characterName" characterID="0" characterReferencedInVariable="false"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_104" x="5" y="5" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="Reset" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saClear" x="128" y="10" width="101" height="42">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saReset"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saCancel"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent"/>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_A"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="set" operand="value" value=""/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_106" x="5" y="5" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="Clear" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saCancel" x="238" y="10" width="122" height="42">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saClear"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saConfirm"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent"/>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_A"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="set" operand="value" value=""/>
+					<event type="exitMenu"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_107" x="5" y="5" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="Cancel" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saConfirm" x="369" y="10" width="134" height="42">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saCancel"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saReset"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent"/>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_A"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="changeHeroName" characterID="0" characterReferencedInVariable="true" stringID="0"/>
+					<event type="exitMenu"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_108" x="5" y="5" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="Confirm" shadowColor="#000000"/>
+		</object>
+	</object>
+	<object type="frame" objectName="frmName" x="116" y="0" width="524" height="54">
+		<object type="text" objectName="txtName" x="10" y="10" textType="string" textWidth="504" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" stringID="0" systemString="false" shadowColor="#000000"/>
+	</object>
+	<object type="frame" objectName="frmCharacterMap" x="0" y="116" width="640" height="364">
+		<object type="selectable area" objectName="sa_A" x="6" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_5"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_B"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_SemiColon"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_F"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="A"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_2" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="A" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_E" x="174" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_D"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_a"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Comma"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_J"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="E"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_6" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="E" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_a" x="216" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_E"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_b"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Period"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_f"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="a"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_13" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="a" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_b" x="258" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_a"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_c"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_LessThan"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_g"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="b"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_14" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="b" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_c" x="300" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_b"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_d"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_GreaterThan"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_h"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="c"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_15" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="c" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_d" x="342" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_c"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_e"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Slash"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_i"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="d"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_16" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="d" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_e" x="384" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_d"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_1"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_QuestionMark"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_j"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="e"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_17" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="e" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_1" x="426" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_e"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_2"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_BackSlash"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_6"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="1"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_18" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="1" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_2" x="468" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_1"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_3"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Pipe"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_7"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="2"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_19" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="2" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_3" x="510" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_2"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_4"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseBracket"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_8"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="3"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_20" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="3" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_4" x="552" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_3"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_5"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Space"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_9"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="4"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_21" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="4" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_5" x="594" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_4"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_A"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Backspace"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_0"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="5"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_22" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="5" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_P" x="6" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Asterisk"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Q"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_K"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_U"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="P"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_9" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="P" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_U" x="6" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Plus"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_V"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_P"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Z"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="U"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_10" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="U" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Z" x="6" y="258" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseCurlyBrace"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_z"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_U"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_SemiColon"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="Z"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_11" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="Z" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_SemiColon" x="6" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Backspace"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Apostrophe"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Z"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_A"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value=";"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_12" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText=";" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_B" x="48" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_A"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_C"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Apostrophe"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_G"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="B"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_3" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="B" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_F" x="6" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_0"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_G"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_A"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_K"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="F"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_7" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="F" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_C" x="90" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_B"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_D"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Colon"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_H"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="C"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_4" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="C" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_G" x="48" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_F"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_H"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_B"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_L"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="G"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_23" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="G" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_D" x="132" y="8" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_C"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_E"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Quote"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_I"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="D"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_5" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="D" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_H" x="90" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_G"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_I"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_C"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_M"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="H"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_24" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="H" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_I" x="132" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_H"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_J"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_D"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_N"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="I"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_25" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="I" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_J" x="174" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_I"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_f"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_E"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_O"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="J"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_26" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="J" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_f" x="216" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_J"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_g"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_a"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_k"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="f"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_27" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="f" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_g" x="258" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_f"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_h"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_b"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_l"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="g"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_28" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="g" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_h" x="300" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_g"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_i"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_c"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_m"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="h"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_29" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="h" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_i" x="342" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_h"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_j"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_d"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_n"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="i"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_30" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="i" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_j" x="384" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_i"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_6"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_e"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_o"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="j"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_31" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="j" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_6" x="426" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_j"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_7"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_1"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_BackQuote"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="6"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_32" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="6" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_7" x="468" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_6"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_8"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_2"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Tilda"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="7"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_33" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="7" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_8" x="510" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_7"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_9"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_3"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Exclamation"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="8"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_34" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="8" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_9" x="552" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_8"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_0"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_4"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_AtSymbol"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="9"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_35" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="9" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_0" x="594" y="58" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_9"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_F"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_5"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Pound"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="0"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_36" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="0" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_K" x="6" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Pound"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_L"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_F"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_P"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="K"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_8" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="K" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_O" x="174" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_N"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_k"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_J"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_T"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="O"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_40" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="O" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_n" x="342" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_m"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_o"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_i"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_s"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="n"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_44" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="n" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_o" x="384" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_n"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_BackQuote"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_j"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_t"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="o"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_45" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="o" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_BackQuote" x="426" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_o"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Tilda"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_6"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_DollarSign"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="`"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_46" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="`" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Tilda" x="468" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_BackQuote"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Exclamation"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_7"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Percent"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="~"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_47" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="~" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Exclamation" x="510" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Tilda"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_AtSymbol"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_8"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Caret"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="!"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_48" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="!" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_AtSymbol" x="552" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Exclamation"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Pound"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_9"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Ampersand"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="@"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_49" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="@" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Pound" x="594" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_AtSymbol"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_K"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_0"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Asterisk"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="#"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_50" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="#" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_L" x="48" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_K"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_M"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_G"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Q"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="L"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_37" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="L" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Q" x="48" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_P"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_R"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_L"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_V"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="Q"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_51" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="Q" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_V" x="48" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_U"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_W"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Q"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Apostrophe"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="V"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_52" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="V" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Apostrophe" x="48" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_SemiColon"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Colon"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_V"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_B"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="&apos;"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_54" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="&apos;" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_M" x="90" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_L"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_N"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_H"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_R"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="M"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_38" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="M" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_R" x="90" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Q"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_S"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_M"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_W"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="R"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_55" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="R" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_W" x="90" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_V"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_X"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_R"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Colon"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="W"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_56" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="W" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Colon" x="90" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Apostrophe"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Quote"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_W"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_C"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value=":"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_58" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText=":" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_N" x="132" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_M"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_O"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_I"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_S"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="N"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_39" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="N" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_S" x="132" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_R"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_T"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_N"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_X"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="S"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_59" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="S" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_X" x="132" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_W"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Y"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_S"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Quote"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="X"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_60" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="X" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Quote" x="132" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Colon"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Comma"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_X"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_D"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="&quot;"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_62" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="&quot;" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_T" x="174" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_S"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_p"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_O"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Y"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="T"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_63" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="T" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Y" x="174" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_X"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_u"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_T"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Comma"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="Y"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_64" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="Y" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Comma" x="174" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Quote"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Period"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Y"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_E"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value=","/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_66" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="," shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_k" x="216" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_O"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_l"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_f"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_p"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="k"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_41" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="k" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_p" x="216" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_T"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_q"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_k"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_u"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="p"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_67" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="p" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_u" x="216" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Y"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_v"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_p"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_z"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="u"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_68" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="u" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_z" x="216" y="258" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Z"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Equals"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_u"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Period"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="z"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_69" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="z" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Period" x="216" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Comma"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_LessThan"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_z"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_a"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="."/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_70" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="." shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_l" x="258" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_k"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_m"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_g"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_q"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="l"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_42" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="l" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_q" x="258" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_p"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_r"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_l"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_v"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="q"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_71" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="q" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_v" x="258" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_u"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_w"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_q"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_LessThan"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="v"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_72" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="v" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_LessThan" x="258" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Period"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_GreaterThan"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_v"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_b"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="&lt;"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_74" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="&lt;" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_m" x="300" y="108" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_l"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_n"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_h"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_r"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="m"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_43" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="m" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_w" x="300" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_v"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_x"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_r"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_GreaterThan"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="w"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_76" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="w" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_GreaterThan" x="300" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_LessThan"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Slash"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_w"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_c"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="&gt;"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_78" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="&gt;" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_r" x="300" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_q"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_s"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_m"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_w"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="r"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_75" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="r" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_s" x="342" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_r"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_t"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_n"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_x"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="s"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_79" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="s" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_x" x="342" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_w"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_y"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_s"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Slash"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="x"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_80" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="x" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Slash" x="342" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_GreaterThan"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_QuestionMark"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_x"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_d"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="/"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_82" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="/" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_t" x="384" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_s"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_DollarSign"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_o"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_y"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="t"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_83" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="t" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_y" x="384" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_x"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenParenthesis"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_t"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_QuestionMark"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="y"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_84" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="y" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_QuestionMark" x="384" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Slash"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_BackSlash"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_y"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_e"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="?"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_86" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="?" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_DollarSign" x="426" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_t"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Percent"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_BackQuote"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenParenthesis"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="$"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_87" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="$" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_OpenParenthesis" x="426" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_y"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseParenthesis"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_DollarSign"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Equals"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="("/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_88" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="(" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Equals" x="426" y="258" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_z"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenBracket"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenParenthesis"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_BackSlash"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="="/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_89" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="=" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_BackSlash" x="426" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_QuestionMark"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Pipe"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Equals"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_1"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="\"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_90" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="\" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Percent" x="468" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_DollarSign"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Caret"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Tilda"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseParenthesis"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="%"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_91" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="%" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_CloseParenthesis" x="468" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenParenthesis"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Underscore"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Percent"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenBracket"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value=")"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_92" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText=")" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_OpenBracket" x="468" y="258" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Equals"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseBracket"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseParenthesis"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Pipe"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="["/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_93" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="[" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Pipe" x="468" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_BackSlash"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Space"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenBracket"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_2"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="|"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_94" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="|" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Caret" x="510" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Percent"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Ampersand"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Exclamation"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Underscore"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="^"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_95" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="^" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Underscore" x="510" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseParenthesis"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Minus"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Caret"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseBracket"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="_"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_96" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="_" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Ampersand" x="552" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Caret"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Asterisk"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_AtSymbol"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Minus"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="&amp;"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_99" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="&amp;" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Asterisk" x="594" y="158" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Ampersand"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_P"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Pound"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Plus"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="*"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_100" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="*" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Plus" x="594" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Minus"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_U"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Asterisk"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseCurlyBrace"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="+"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_102" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="+" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Minus" x="552" y="208" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Underscore"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Plus"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Ampersand"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenCurlyBrace"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="-"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_101" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="-" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_OpenCurlyBrace" x="552" y="258" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseBracket"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseCurlyBrace"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Minus"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Space"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="{"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_103" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="{" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_CloseBracket" x="510" y="258" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenBracket"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenCurlyBrace"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Underscore"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_3"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="]"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_97" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="]" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Space" x="552" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Pipe"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Backspace"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenCurlyBrace"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_4"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value=" "/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="image" objectName="image_2" x="8" y="8" scaledToWidth="0" scaledToHeight="0" saveSlotID="0" scaled="false" imageType="file" fileLocation="local::/images//pictures/space.png"/>
+		</object>
+		<object type="selectable area" objectName="sa_CloseCurlyBrace" x="594" y="258" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_OpenCurlyBrace"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Z"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Plus"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Backspace"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="add" operand="value" value="}"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_105" x="8" y="8" textType="plain text" textWidth="24" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="}" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="sa_Backspace" x="594" y="308" width="40" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_Space"/>
+				</leftArrow>
+				<rightArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_SemiColon"/>
+				</rightArrow>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_CloseCurlyBrace"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="sa_5"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="stringOperation" stringToChange="single" stringID="0" operation="removeLastCharacter"/>
+					<event type="changeText" objectName="txtName" saveSlotID="0" textType="string" stringID="0" systemString="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="image" objectName="image_3" x="8" y="8" scaledToWidth="0" scaledToHeight="0" saveSlotID="0" scaled="false" imageType="file" fileLocation="local::/images//pictures/backspace.png"/>
+		</object>
+	</object>
+</openrpgmaker-mainmenulayout>

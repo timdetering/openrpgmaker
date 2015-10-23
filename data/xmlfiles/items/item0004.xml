@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-item name="Stimulant" description="Revives a dead character with 25% HP." price="120" type="medicine" numberOfUses="1">
+	<usableBy usableBy="heroes">
+		1111
+	</usableBy>
+	<cureCondition>
+	</cureCondition>
+	<options percentRestoredHP="25" amountRestoredHP="0" percentRestoredMP="0" amountRestoredMP="0" targetsSingleAlly="true" onlyUsableOnFieldMap="false" onlyUsableOnDeadCharacters="true"/>
+</openrpgmaker-item>

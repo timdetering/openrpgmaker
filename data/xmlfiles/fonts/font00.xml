@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-font name="Small" imageLocation="global::/images/fonts/small.png" characterWidth="16" spaceWidth="8" tabWidth="24" characterHeight="32" dropShadowXOffset="2" dropShadowYOffset="2">
+	ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&amp;*()_-+=[]{};&apos;:&quot;,.&lt;&gt;/?\|
+</openrpgmaker-font>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-charactersprite name="Char0000">
+	<mapSprite>
+		<pose name="Idle" location="" numLoops="1" pingPong="false"/>
+		<pose name="Walking" location="" numLoops="1" pingPong="false"/>
+		<pose name="Jumping" location="" numLoops="1" pingPong="false"/>
+		<pose name="Grappling" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+		<pose name="" location="" numLoops="1" pingPong="false"/>
+	</mapSprite>
+	<battleSprite>
+		<pose name="Idle Stance" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Attack" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Skill Used" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Dieing" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Dead" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Damaged" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Bad Status" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Defending" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Running Left" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Running Right" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Item Used" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Wounded" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="Victory" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+		<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	</battleSprite>
+</openrpgmaker-charactersprite>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TileBrowser</class>
+ <widget class="QDialog" name="TileBrowser">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>426</width>
+    <height>426</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Choose a Tile</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gui_icons.qrc">
+    <normaloff>:/icons/openrpgmaker.png</normaloff>:/icons/openrpgmaker.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">.QFrame
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: palette(window-text);
+}
+
+.QFrame&gt;QLabel
+{
+	border-width: 0px;
+	background-color: palette(window-text);
+	color: palette(window);
+	font-weight: bold;
+}
+
+.QFrame&gt;QCheckBox
+{
+	background-color: palette(window-text);
+	border-width: 0px;
+	border-style: none;
+	color: palette(window);
+	spacing: 3px;
+	font-weight: bold;
+	padding: 0px 0px 0px 3px;
+}
+
+.QFrame&gt;QCheckBox::indicator
+{
+	min-width: 8px;
+	max-width: 8px;
+	min-height: 8px;
+	max-height: 8px;
+	width: 8px;
+	height: 8px;
+	border-width: 2px;
+	border-radius: 0px;
+	border-style: ridge;
+	border-color: palette(mid);
+}
+
+.QFrame&gt;QCheckBox::indicator:unchecked
+{
+	background-color: palette(base);
+}
+
+.QFrame&gt;QCheckBox::indicator:checked
+{
+	background-color: palette(window-text);
+}
+
+.QFrame&gt;QCheckBox::indicator:hover
+{
+	border-color: palette(highlight);
+}</string>
+  </property>
+  <layout class="QVBoxLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QTreeWidget" name="tileList">
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="tabKeyNavigation">
+      <bool>true</bool>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>false</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::ExtendedSelection</enum>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="uniformRowHeights">
+      <bool>true</bool>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="animated">
+      <bool>false</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+     <column>
+      <property name="text">
+       <string>File Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>File Type</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Info</string>
+      </property>
+     </column>
+     <item>
+      <property name="text">
+       <string>Project Data</string>
+      </property>
+      <property name="icon">
+       <iconset resource="gui_icons.qrc">
+        <normaloff>:/icons/folder.png</normaloff>:/icons/folder.png</iconset>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Global Data</string>
+      </property>
+      <property name="icon">
+       <iconset resource="gui_icons.qrc">
+        <normaloff>:/icons/folder.png</normaloff>:/icons/folder.png</iconset>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QLabel" name="filterLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>&lt;h3&gt;Filter:&lt;/h3&gt;</string>
+       </property>
+       <property name="buddy">
+        <cstring>filterSelector</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="filterSelector">
+       <item>
+        <property name="text">
+         <string>All Supported Images</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>BMP Images (*.bmp)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>GIF Images (*.gif)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>JPEG Images (*.jpg, *.jpeg)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>PNG Images (*.png)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>PNM Images (*.pbm, *.pgm, *.ppm)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>XPM Images (*.xpm)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>TIFF Images (*.tiff)</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="statusBar">
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+  <action name="aSelectAllImages">
+   <property name="text">
+    <string>Select All Images in Folder</string>
+   </property>
+  </action>
+  <action name="aSelectAllImagesRecursively">
+   <property name="text">
+    <string>Select All Images in Folder (Recursing Directories)</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="gui_icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>TileBrowser</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>218</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>212</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>TileBrowser</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>218</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>212</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

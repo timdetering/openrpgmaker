@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-item name="Halberd" description="A strong spear made for dispatching enemies quick." price="2800" type="weapon" skillID="-1">
+	<usableBy usableBy="heroes">
+		1111
+	</usableBy>
+	<attributes>
+		11100000000000000
+	</attributes>
+	<conditions inflictConditions="true" effectivenessProbability="0">
+	</conditions>
+	<statChange attack="71" defense="0" wisdom="0" agility="0"/>
+	<animation movementBeforeAttack="none" numberOfAttacks="1" animationID="0" rangedWeaponAnimationID="257" trajectory="returnafterstriking" targetting="single" animationSpeed="fast" weaponAnimation="false" afterImage="false" rangedWeapon="true" battleAnimationID="0"/>
+	<options mpConsumed="0" hitProbability="90" twoHanded="true" alwaysAttackFirst="false" attackTwice="false" attackAllEnemies="false" ignoreEnemyEvasion="false" cursed="false" usableOnTheDead="false"/>
+</openrpgmaker-item>

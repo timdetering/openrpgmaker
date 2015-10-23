@@ -1,0 +1,2442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Justin (Tuxinator) Davis</author>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>959</width>
+    <height>588</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>588</height>
+   </size>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Open RPG Maker</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="gui_icons.qrc">
+    <normaloff>:/icons/openrpgmaker.png</normaloff>:/icons/openrpgmaker.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">.QFrame
+{
+	border-width: 1px;
+	border-style: solid;
+	border-color: palette(window-text);
+}
+
+.QFrame&gt;QLabel
+{
+	border-width: 0px;
+	background-color: palette(window-text);
+	color: palette(window);
+	font-weight: bold;
+}
+
+.QFrame&gt;QCheckBox
+{
+	background-color: palette(window-text);
+	border-width: 0px;
+	border-style: none;
+	color: palette(window);
+	spacing: 3px;
+	font-weight: bold;
+	padding: 0px 0px 0px 3px;
+}
+
+.QFrame&gt;QCheckBox::indicator
+{
+	min-width: 8px;
+	max-width: 8px;
+	min-height: 8px;
+	max-height: 8px;
+	width: 8px;
+	height: 8px;
+	border-width: 2px;
+	border-radius: 0px;
+	border-style: ridge;
+	border-color: palette(mid);
+}
+
+.QFrame&gt;QCheckBox::indicator:unchecked
+{
+	background-color: palette(base);
+}
+
+.QFrame&gt;QCheckBox::indicator:checked
+{
+	background-color: palette(window-text);
+}
+
+.QFrame&gt;QCheckBox::indicator:hover
+{
+	border-color: palette(highlight);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <property name="spacing">
+     <number>3</number>
+    </property>
+    <property name="margin">
+     <number>3</number>
+    </property>
+    <item>
+     <widget class="QSplitter" name="mapSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="widget_3" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout_14">
+        <property name="spacing">
+         <number>3</number>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QSplitter" name="layersSplitter">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="childrenCollapsible">
+           <bool>false</bool>
+          </property>
+          <widget class="QFrame" name="frmMapSelector">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Box</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Map Selector</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTreeWidget" name="twMapList">
+              <property name="contextMenuPolicy">
+               <enum>Qt::CustomContextMenu</enum>
+              </property>
+              <property name="acceptDrops">
+               <bool>true</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOn</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAlwaysOn</enum>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="dragEnabled">
+               <bool>true</bool>
+              </property>
+              <property name="dragDropMode">
+               <enum>QAbstractItemView::InternalMove</enum>
+              </property>
+              <property name="defaultDropAction">
+               <enum>Qt::MoveAction</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectItems</enum>
+              </property>
+              <property name="rootIsDecorated">
+               <bool>false</bool>
+              </property>
+              <column>
+               <property name="text">
+                <string>Map</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QFrame" name="frmLayers">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Layers</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_4" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout_10">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="margin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QTableWidget" name="twLayers">
+                 <property name="styleSheet">
+                  <string notr="true">QTableWidget::indicator
+{
+	width: 16px;
+	height: 16px;
+	border-width: 0px;
+	border-style: none;
+}
+
+QTableWidget::indicator:checked
+{
+	image: url(&quot;:/icons/visible_yes.png&quot;);
+}
+
+QTableWidget::indicator:unchecked
+{
+	image: url(&quot;:/icons/visible_no.png&quot;);
+}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::SingleSelection</enum>
+                 </property>
+                 <property name="selectionBehavior">
+                  <enum>QAbstractItemView::SelectRows</enum>
+                 </property>
+                 <property name="verticalScrollMode">
+                  <enum>QAbstractItemView::ScrollPerPixel</enum>
+                 </property>
+                 <property name="horizontalScrollMode">
+                  <enum>QAbstractItemView::ScrollPerPixel</enum>
+                 </property>
+                 <property name="showGrid">
+                  <bool>false</bool>
+                 </property>
+                 <property name="gridStyle">
+                  <enum>Qt::NoPen</enum>
+                 </property>
+                 <attribute name="verticalHeaderVisible">
+                  <bool>false</bool>
+                 </attribute>
+                 <column>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="gui_icons.qrc">
+                    <normaloff>:/icons/visible_yes.png</normaloff>:/icons/visible_yes.png</iconset>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Name</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_6" native="true">
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="margin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QToolButton" name="bMoveLayerUp">
+                    <property name="text">
+                     <string>...</string>
+                    </property>
+                    <property name="arrowType">
+                     <enum>Qt::UpArrow</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="bMoveLayerDown">
+                    <property name="text">
+                     <string>...</string>
+                    </property>
+                    <property name="arrowType">
+                     <enum>Qt::DownArrow</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_18" native="true"/>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="bDeleteLayer">
+                    <property name="toolTip">
+                     <string>Delete Selected Layer</string>
+                    </property>
+                    <property name="statusTip">
+                     <string>Delete Selected Layer</string>
+                    </property>
+                    <property name="text">
+                     <string>...</string>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="gui_icons.qrc">
+                      <normaloff>:/icons/minus.png</normaloff>:/icons/minus.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="bAddLayer">
+                    <property name="toolTip">
+                     <string>Add Layer</string>
+                    </property>
+                    <property name="statusTip">
+                     <string>Add Layer</string>
+                    </property>
+                    <property name="text">
+                     <string>...</string>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="gui_icons.qrc">
+                      <normaloff>:/icons/plus.png</normaloff>:/icons/plus.png</iconset>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frmPassability">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Passability Editing</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget_5" native="true">
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <property name="spacing">
+               <number>3</number>
+              </property>
+              <property name="margin">
+               <number>3</number>
+              </property>
+              <item>
+               <widget class="QWidget" name="widget_15" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <property name="margin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_13">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Mode:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="rbSetPassability">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Set</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="rbClearPassability">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Clear</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="rbDirectionPassability">
+                   <property name="text">
+                    <string>Directions</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_16" native="true"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QWidget" name="widget_17" native="true">
+                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                 <property name="spacing">
+                  <number>3</number>
+                 </property>
+                 <property name="margin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_14">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Phase:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="cboxPhases"/>
+                 </item>
+                 <item>
+                  <widget class="QToolButton" name="bConfigurePhases">
+                   <property name="toolTip">
+                    <string>Configure Phases</string>
+                   </property>
+                   <property name="statusTip">
+                    <string>Configure Phases</string>
+                   </property>
+                   <property name="text">
+                    <string>...</string>
+                   </property>
+                   <property name="icon">
+                    <iconset resource="gui_icons.qrc">
+                     <normaloff>:/icons/configure.png</normaloff>:/icons/configure.png</iconset>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QFrame" name="frmMapEditor">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Map Editor</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QToolButton" name="toolRenderPreview">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Preview</string>
+            </property>
+            <property name="statusTip">
+             <string>Display a preview of the map (with background)</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/previewmap.png</normaloff>:/icons/previewmap.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line">
+            <property name="styleSheet">
+             <string notr="true">QFrame
+{
+	min-width: 0px;
+	max-width: 0px;
+	border-style: none groove none none;
+	border-width: 0px 2px 0px 0px;
+	border-color: palette(mid);
+	margin: 0px 2px 0px 2px;
+}</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="bToggleGrid">
+            <property name="toolTip">
+             <string>Toggle Grid</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/gridIcon.png</normaloff>:/icons/gridIcon.png</iconset>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_6">
+            <property name="styleSheet">
+             <string notr="true">QFrame
+{
+	min-width: 0px;
+	max-width: 0px;
+	border-style: none groove none none;
+	border-width: 0px 2px 0px 0px;
+	border-color: palette(mid);
+	margin: 0px 2px 0px 2px;
+}</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="tbUndo">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Undo</string>
+            </property>
+            <property name="statusTip">
+             <string>Undo</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/undo.png</normaloff>:/icons/undo.png</iconset>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="tbRedo">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Redo</string>
+            </property>
+            <property name="statusTip">
+             <string>Redo</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/redo.png</normaloff>:/icons/redo.png</iconset>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_2">
+            <property name="styleSheet">
+             <string notr="true">QFrame
+{
+	min-width: 0px;
+	max-width: 0px;
+	border-style: none groove none none;
+	border-width: 0px 2px 0px 0px;
+	border-color: palette(mid);
+	margin: 0px 2px 0px 2px;
+}</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolMakeSelection">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Select</string>
+            </property>
+            <property name="statusTip">
+             <string>Select a rectangular area</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/select.png</normaloff>:/icons/select.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolDrawRectangle">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Rectangle</string>
+            </property>
+            <property name="statusTip">
+             <string>Draw a rectangle</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/drawrectangle.png</normaloff>:/icons/drawrectangle.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolDrawCircle">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Circle</string>
+            </property>
+            <property name="statusTip">
+             <string>Draw a circle</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/drawcircle.png</normaloff>:/icons/drawcircle.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolBucketFill">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Fill</string>
+            </property>
+            <property name="statusTip">
+             <string>Fill an area</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/fill.png</normaloff>:/icons/fill.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolPencil">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Pencil</string>
+            </property>
+            <property name="statusTip">
+             <string>Draw one space at a time</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolTiling">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Tiling</string>
+            </property>
+            <property name="statusTip">
+             <string>Edit auto tiles tiling directions</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/tileability.png</normaloff>:/icons/tileability.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_4">
+            <property name="styleSheet">
+             <string notr="true">QFrame
+{
+	min-width: 0px;
+	max-width: 0px;
+	border-style: none groove none none;
+	border-width: 0px 2px 0px 0px;
+	border-color: palette(mid);
+	margin: 0px 2px 0px 2px;
+}</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="bEditLayers">
+            <property name="toolTip">
+             <string>Edit Layers</string>
+            </property>
+            <property name="statusTip">
+             <string>Edit Layers</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/layers.png</normaloff>:/icons/layers.png</iconset>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="bEditPassability">
+            <property name="toolTip">
+             <string>Edit Passability</string>
+            </property>
+            <property name="statusTip">
+             <string>Edit Passability</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/tileability.png</normaloff>:/icons/tileability.png</iconset>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="editEventLayer">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Edit Events</string>
+            </property>
+            <property name="statusTip">
+             <string>Edit the event layer</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/editeventlayer.png</normaloff>:/icons/editeventlayer.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_3">
+            <property name="styleSheet">
+             <string notr="true">QFrame
+{
+	min-width: 0px;
+	max-width: 0px;
+	border-style: none groove none none;
+	border-width: 0px 2px 0px 0px;
+	border-color: palette(mid);
+	margin: 0px 2px 0px 2px;
+}</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="zoom1to1">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>1/1</string>
+            </property>
+            <property name="statusTip">
+             <string>Zoom to a 1/1 ratio</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/zoom1_1.png</normaloff>:/icons/zoom1_1.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="zoom1to2">
+            <property name="toolTip">
+             <string>1/2</string>
+            </property>
+            <property name="statusTip">
+             <string>Zoom to a 1/2 ratio</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/zoom1_2.png</normaloff>:/icons/zoom1_2.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="zoom1to4">
+            <property name="toolTip">
+             <string>1/4</string>
+            </property>
+            <property name="statusTip">
+             <string>Zoom to a 1/4 ratio</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/zoom1_4.png</normaloff>:/icons/zoom1_4.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="zoom1to8">
+            <property name="toolTip">
+             <string>1/8</string>
+            </property>
+            <property name="statusTip">
+             <string>Zoom to a 1/8 ratio</string>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="gui_icons.qrc">
+              <normaloff>:/icons/zoom1_8.png</normaloff>:/icons/zoom1_8.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="spacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>16</width>
+              <height>22</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_5">
+          <property name="styleSheet">
+           <string notr="true">QFrame
+{
+	min-height: 0px;
+	max-height: 0px;
+	border-style: groove none none none;
+	border-width: 2px 0px 0px 0px;
+	border-color: palette(mid);
+}</string>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="MapView" name="gvMapEditor">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="mouseTracking">
+           <bool>true</bool>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frmTileSelector">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Tile Selector</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_2" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
+          <property name="spacing">
+           <number>3</number>
+          </property>
+          <property name="margin">
+           <number>3</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="frame">
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="margin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Tileset</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="editSelectTileset">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="toolTip">
+                <string>Tileset</string>
+               </property>
+               <property name="statusTip">
+                <string>Change currently visible tileset</string>
+               </property>
+               <property name="maxCount">
+                <number>256</number>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_2">
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="margin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Tiles</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget" native="true">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="autoFillBackground">
+                <bool>true</bool>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="margin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="TileView" name="gvTileSelection">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>192</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>192</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="verticalScrollBarPolicy">
+                   <enum>Qt::ScrollBarAlwaysOff</enum>
+                  </property>
+                  <property name="horizontalScrollBarPolicy">
+                   <enum>Qt::ScrollBarAlwaysOff</enum>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QScrollBar" name="sbTileView">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
+                  <property name="maximum">
+                   <number>1344</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>16</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>64</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>959</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;Project</string>
+    </property>
+    <addaction name="aNewProject"/>
+    <addaction name="aOpenProject"/>
+    <addaction name="aCloseProject"/>
+    <addaction name="separator"/>
+    <addaction name="aChangeProjectName"/>
+    <addaction name="aConfigureIntroScreens"/>
+    <addaction name="aCreateGameDisk"/>
+    <addaction name="separator"/>
+    <addaction name="aExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Map">
+    <property name="title">
+     <string>&amp;Map</string>
+    </property>
+    <widget class="QMenu" name="menuMap_Zoom">
+     <property name="title">
+      <string>Map &amp;Zoom</string>
+     </property>
+     <addaction name="aZoom_1to1"/>
+     <addaction name="aZoom_1to2"/>
+     <addaction name="aZoom_1to4"/>
+     <addaction name="aZoom_1to8"/>
+    </widget>
+    <widget class="QMenu" name="menu_Editing_Mode">
+     <property name="title">
+      <string>&amp;Editing Mode</string>
+     </property>
+     <addaction name="aEditLayers"/>
+     <addaction name="aEditPassability"/>
+     <addaction name="aEdit_EventLayer"/>
+    </widget>
+    <addaction name="aSaveChanges"/>
+    <addaction name="aRevertChanges"/>
+    <addaction name="separator"/>
+    <addaction name="aGeneratePreview"/>
+    <addaction name="separator"/>
+    <addaction name="aToggleGrid"/>
+    <addaction name="separator"/>
+    <addaction name="menu_Editing_Mode"/>
+    <addaction name="menuMap_Zoom"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>&amp;Tools</string>
+    </property>
+    <addaction name="aDatabase"/>
+    <addaction name="aResourceManager"/>
+    <addaction name="aImport"/>
+    <addaction name="aListenToMusic"/>
+    <addaction name="aFindEvent"/>
+   </widget>
+   <widget class="QMenu" name="menuGame">
+    <property name="title">
+     <string>&amp;Game</string>
+    </property>
+    <addaction name="aTestPlay"/>
+    <addaction name="separator"/>
+    <addaction name="aGameOptions_FS"/>
+    <addaction name="aGameOptions_DisplayTitle"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="aHelp_ShowIndex"/>
+    <addaction name="aAbout_ORPGM"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Map"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuGame"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>File Tool Bar</string>
+   </property>
+   <property name="toolTip">
+    <string>About</string>
+   </property>
+   <property name="statusTip">
+    <string>About Open RPG Maker</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllToolBarAreas</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="aNewProject"/>
+   <addaction name="aOpenProject"/>
+   <addaction name="aCloseProject"/>
+   <addaction name="aExit"/>
+   <addaction name="separator"/>
+   <addaction name="aChangeProjectName"/>
+   <addaction name="aCreateGameDisk"/>
+   <addaction name="separator"/>
+   <addaction name="aSaveChanges"/>
+   <addaction name="aRevertChanges"/>
+   <addaction name="separator"/>
+   <addaction name="aDatabase"/>
+   <addaction name="aResourceManager"/>
+   <addaction name="aImport"/>
+   <addaction name="aListenToMusic"/>
+   <addaction name="aFindEvent"/>
+   <addaction name="separator"/>
+   <addaction name="aTestPlay"/>
+   <addaction name="separator"/>
+   <addaction name="aGameOptions_FS"/>
+   <addaction name="aGameOptions_DisplayTitle"/>
+   <addaction name="separator"/>
+   <addaction name="aHelp_ShowIndex"/>
+   <addaction name="aAbout_ORPGM"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="aOpenProject">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/fileopen.png</normaloff>:/icons/fileopen.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open Project</string>
+   </property>
+   <property name="statusTip">
+    <string>Open an Open RPG Maker project file</string>
+   </property>
+  </action>
+  <action name="aSaveChanges">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/filesave.png</normaloff>:/icons/filesave.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Save Changes</string>
+   </property>
+   <property name="statusTip">
+    <string>Save changes made to project</string>
+   </property>
+  </action>
+  <action name="aExit">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="statusTip">
+    <string>Quit Open RPG Maker</string>
+   </property>
+  </action>
+  <action name="aListenToMusic">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/music.png</normaloff>:/icons/music.png</iconset>
+   </property>
+   <property name="text">
+    <string>Listen to &amp;Music</string>
+   </property>
+   <property name="statusTip">
+    <string>Listen to one of the project's background music files</string>
+   </property>
+  </action>
+  <action name="aHelp_ShowIndex">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/help.png</normaloff>:/icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Index</string>
+   </property>
+   <property name="statusTip">
+    <string>Display help index</string>
+   </property>
+  </action>
+  <action name="aAbout_ORPGM">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/info.png</normaloff>:/icons/info.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About Open RPG Maker</string>
+   </property>
+   <property name="statusTip">
+    <string>About Open RPG Maker</string>
+   </property>
+  </action>
+  <action name="aGameOptions_FS">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/window_fullscreen.png</normaloff>:/icons/window_fullscreen.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Full Screen Mode</string>
+   </property>
+   <property name="statusTip">
+    <string>Toggle whether project opens in fullscreen or windowed mode</string>
+   </property>
+  </action>
+  <action name="aGameOptions_DisplayTitle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/displaytitle.png</normaloff>:/icons/displaytitle.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Display Title</string>
+   </property>
+   <property name="statusTip">
+    <string>Toggle whether or not the project will display it's title screen</string>
+   </property>
+  </action>
+  <action name="aNewProject">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/filenew.png</normaloff>:/icons/filenew.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New Project</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a new Open RPG Maker project</string>
+   </property>
+  </action>
+  <action name="aCreateGameDisk">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/disk.png</normaloff>:/icons/disk.png</iconset>
+   </property>
+   <property name="text">
+    <string>Create &amp;Game Disk</string>
+   </property>
+   <property name="statusTip">
+    <string>Creat a distributal zip file of the project</string>
+   </property>
+  </action>
+  <action name="aCloseProject">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/fileclose.png</normaloff>:/icons/fileclose.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Close Project</string>
+   </property>
+   <property name="statusTip">
+    <string>Close project</string>
+   </property>
+  </action>
+  <action name="aRevertChanges">
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/revert.png</normaloff>:/icons/revert.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Revert to Last Save</string>
+   </property>
+   <property name="statusTip">
+    <string>Revert project to when it was last saved</string>
+   </property>
+  </action>
+  <action name="aGeneratePreview">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/previewmap.png</normaloff>:/icons/previewmap.png</iconset>
+   </property>
+   <property name="text">
+    <string>Generate &amp;Preview</string>
+   </property>
+  </action>
+  <action name="aEdit_EventLayer">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/editeventlayer.png</normaloff>:/icons/editeventlayer.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Event Layer</string>
+   </property>
+  </action>
+  <action name="aZoom_1to1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/zoom1_1.png</normaloff>:/icons/zoom1_1.png</iconset>
+   </property>
+   <property name="text">
+    <string>1/1 Ratio</string>
+   </property>
+   <property name="statusTip">
+    <string>Zoom to a 1/1 ratio</string>
+   </property>
+  </action>
+  <action name="aZoom_1to2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/zoom1_2.png</normaloff>:/icons/zoom1_2.png</iconset>
+   </property>
+   <property name="text">
+    <string>1/2 Ratio</string>
+   </property>
+   <property name="statusTip">
+    <string>Zoom to a 1/2 ratio</string>
+   </property>
+  </action>
+  <action name="aZoom_1to4">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/zoom1_4.png</normaloff>:/icons/zoom1_4.png</iconset>
+   </property>
+   <property name="text">
+    <string>1/4 Ratio</string>
+   </property>
+   <property name="statusTip">
+    <string>Zoom to a 1/4 ratio</string>
+   </property>
+  </action>
+  <action name="aZoom_1to8">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/zoom1_8.png</normaloff>:/icons/zoom1_8.png</iconset>
+   </property>
+   <property name="text">
+    <string>1/8 Ratio</string>
+   </property>
+   <property name="statusTip">
+    <string>Zoom to a 1/8 ratio</string>
+   </property>
+  </action>
+  <action name="aDatabase">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/editdatabase.png</normaloff>:/icons/editdatabase.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Database</string>
+   </property>
+   <property name="statusTip">
+    <string>Edit the project's database</string>
+   </property>
+  </action>
+  <action name="aResourceManager">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/resourcemanager.png</normaloff>:/icons/resourcemanager.png</iconset>
+   </property>
+   <property name="text">
+    <string>Resource Manager</string>
+   </property>
+   <property name="statusTip">
+    <string>Add/Remove resources (images, sound effects, etc.) from project</string>
+   </property>
+  </action>
+  <action name="aFindEvent">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/findevent.png</normaloff>:/icons/findevent.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Find Event</string>
+   </property>
+   <property name="statusTip">
+    <string>Find a specific event</string>
+   </property>
+  </action>
+  <action name="aTestPlay">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/testplay.png</normaloff>:/icons/testplay.png</iconset>
+   </property>
+   <property name="text">
+    <string>Test &amp;Play</string>
+   </property>
+   <property name="statusTip">
+    <string>Play test project</string>
+   </property>
+  </action>
+  <action name="aChangeProjectName">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/changeprojectname.png</normaloff>:/icons/changeprojectname.png</iconset>
+   </property>
+   <property name="text">
+    <string>Change Project Name</string>
+   </property>
+   <property name="statusTip">
+    <string>Change the name of the current project</string>
+   </property>
+  </action>
+  <action name="aNewEmptyMap">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/filenew.png</normaloff>:/icons/filenew.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;New Empty Map</string>
+   </property>
+   <property name="toolTip">
+    <string>New Empty Map</string>
+   </property>
+   <property name="statusTip">
+    <string>Creates a new blank map.</string>
+   </property>
+  </action>
+  <action name="aDeleteMap">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/editdelete.png</normaloff>:/icons/editdelete.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delete Map</string>
+   </property>
+  </action>
+  <action name="aMapProperties">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/configure.png</normaloff>:/icons/configure.png</iconset>
+   </property>
+   <property name="text">
+    <string>Map &amp;Properties</string>
+   </property>
+  </action>
+  <action name="aEditOnloadEvent">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/configure.png</normaloff>:/icons/configure.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit On-Load Event</string>
+   </property>
+  </action>
+  <action name="aNewArea">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/filenew.png</normaloff>:/icons/filenew.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Area</string>
+   </property>
+  </action>
+  <action name="aImport">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/import.png</normaloff>:/icons/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import External Data</string>
+   </property>
+   <property name="toolTip">
+    <string>Import data from other projects/applications</string>
+   </property>
+  </action>
+  <action name="aDeleteArea">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/editdelete.png</normaloff>:/icons/editdelete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Area</string>
+   </property>
+  </action>
+  <action name="aNewRandomMap">
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/filenew.png</normaloff>:/icons/filenew.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Random Map</string>
+   </property>
+   <property name="statusTip">
+    <string>Creates a new Randomly Generated Map.</string>
+   </property>
+  </action>
+  <action name="aToggleGrid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/gridIcon.png</normaloff>:/icons/gridIcon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Toggle Grid</string>
+   </property>
+  </action>
+  <action name="aEditPassability">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/tileability.png</normaloff>:/icons/tileability.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Passability</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit Passability</string>
+   </property>
+  </action>
+  <action name="aEditLayers">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="gui_icons.qrc">
+     <normaloff>:/icons/layers.png</normaloff>:/icons/layers.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Layers</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit Layers</string>
+   </property>
+  </action>
+  <action name="aConfigureIntroScreens">
+   <property name="text">
+    <string>Configure Intro Screens</string>
+   </property>
+   <property name="toolTip">
+    <string>Configure Intro Screens</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TileView</class>
+   <extends>QGraphicsView</extends>
+   <header>tileview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MapView</class>
+   <extends>QGraphicsView</extends>
+   <header>mapview.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>toolRenderPreview</tabstop>
+  <tabstop>toolMakeSelection</tabstop>
+  <tabstop>toolDrawRectangle</tabstop>
+  <tabstop>toolDrawCircle</tabstop>
+  <tabstop>toolBucketFill</tabstop>
+  <tabstop>toolPencil</tabstop>
+  <tabstop>editEventLayer</tabstop>
+  <tabstop>toolTiling</tabstop>
+  <tabstop>gvTileSelection</tabstop>
+ </tabstops>
+ <resources>
+  <include location="gui_icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>aExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>475</x>
+     <y>201</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aEdit_EventLayer</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>editEventLayer</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>81</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>editEventLayer</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>aEdit_EventLayer</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>322</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolRenderPreview</sender>
+   <signal>clicked()</signal>
+   <receiver>aGeneratePreview</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>276</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aZoom_1to1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>zoom1to1</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>554</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aZoom_1to2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>zoom1to2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>580</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aZoom_1to4</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>zoom1to4</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aZoom_1to8</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>zoom1to8</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>632</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoom1to1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>aZoom_1to1</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>554</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoom1to2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>aZoom_1to2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>580</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoom1to4</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>aZoom_1to4</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>606</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoom1to8</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>aZoom_1to8</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>632</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bToggleGrid</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>aToggleGrid</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>259</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aToggleGrid</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>bToggleGrid</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aEditLayers</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>bEditLayers</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>539</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bEditLayers</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>aEditLayers</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>539</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aEditPassability</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>bEditPassability</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>565</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bEditPassability</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>aEditPassability</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>565</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

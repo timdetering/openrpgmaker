@@ -1,0 +1,65 @@
+<html>
+	<head><link rel="stylesheet" type="text/css" href="style.css"/></head>
+	<body>
+		<span style="font-family: monospace; font-size: 12pt;">[<a href="userinterfaces.html">User Interfaces</a>]-&gt;[<a href="database.html">Database</a>]-&gt;[Tilesets Tab]</span><br/><br/>
+		<img src="images/Database_TilesetsTab.png"/><br/>
+		<dl>
+			<dt>Tilesets:</dt>
+			<dd>
+				This is the list of available tilesets. Clicking on one will display its properties to the right.
+				You can also click on the &quot;Array Size&quot; button to change the number of tilesets.
+			</dd>
+			<dt>Name:</dt>
+			<dd>The name of the current tileset, changing this will change the current tileset's name.</dd>
+			<dt>Tileset File:</dt>
+			<dd>The location of the XML file for the selected tileset (relative to the project directory).</dd>
+			<dt>Number of Tiles:</dt>
+			<dd>The number of tiles in the current tileset over the maximum number of tiles per tileset (256).</dd>
+			<dt>Editing Mode:</dt>
+			<dd>Changes the functionality of the tile view to the right.</dd>
+			<dt>Editing Mode -&gt; Terrain:</dt>
+			<dd>
+				Modifies the associated terrain for each tile. Select the terrain on the far right, then click on each tile
+				to change it to that terrain.
+			</dd>
+			<dt>Editing Mode -&gt; Passability:</dt>
+			<dd>Set the passability of each tileset to either passable (O), or not passable (X).</dd>
+			<dt>Editing Mode -&gt; Direction Pass:</dt>
+			<dd>
+				Modify each direction of passability individidually for each tile. Simply click on the arrows for a tile
+				to turn them on (green arrow), and off (black outlined arrow).
+			</dd>
+			<dt>Editing Mode -&gt; Adjust Layout:</dt>
+			<dd>
+				Change the layout of the tiles. Clicking on a tile will select it (indicated with a box), then clicking
+				on another tile will swap it with the currently selected tile, and clear the selection.
+			</dd>
+			<dt>Editing Mode -&gt; Tiling Groups:</dt>
+			<dd>
+				Modify the tiling groups of each tile. Clicking on a tile will set it's tiling group to the number specified
+				in the box &quot;Tiling Group&quot;. Tiles within the same tileset, that belong to the same tile group
+				(except N/A) will tile together in the map editor as if they were one tile. Simply choose a group number
+				and click on each tile to change it to that group.
+			</dd>
+			<dt>Editing Mode -&gt; Set Uniform Terrain:</dt>
+			<dd>Changes all the tiles in the tileset to the currently selected terrain.</dd>
+			<dt>Editing Mode -&gt; Add Tiles:</dt>
+			<dd>Opens a dialog to add tiles from either the projects data directory, or the global data directory.</dd>
+			<dt>Editing Mode -&gt; Delete Tiles:</dt>
+			<dd>
+				Clicking on a tile in this mode will delete it. A confirmation box will popup when you select this mode
+				to ask if you really want to delete tiles. Once deleted they can be recovered by clicking on the &quot;Cancel&quot;
+				button at the bottom of the window, before having clicked on the &quot;Apply&quot; button.
+			</dd>
+			<dt>Tiles:</dt>
+			<dd>
+				This is where all the tiles in the current tileset are displayed. The layer buttons found in the map
+				editor can also be found here, and are used for some of the editing modes in which you can modify the data
+				for each individual layer. If the layer buttons are disabled, then the current editing mode is not specific
+				to each layer.
+			</dd>
+			<dt>Terrain:</dt>
+			<dd>This list is used when modifying the terrain of the tiles.</dd>
+		</dl>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-condition name="Berserk" icon="" extent="0" group="3" priority="51" actionRestriction="3" hitPercentage="50" animationID="6">
+	<susceptibility A="80" B="60" C="40" D="20" E="0"/>
+	<recovery abatesAfterNumTurns="3" abatesAfterNumTurns="3" perTurnRecoveryChance="20" physicalDamageRecoveryChance="0"/>
+	<statAlterations attack="100" defense="100" wisdom="50" agility="100"/>
+	<preventSkills withAttackInfluence="false" attackInfluence="0" withWisdomInfluence="false" wisdomInfluence="0"/>
+	<hpEffect effect="0" percentPerTurn="0" amountPerTurn="0" amountPerNumSteps="0" numSteps="1"/>
+	<mpEffect effect="0" percentPerTurn="0" amountPerTurn="0" amountPerNumSteps="0" numSteps="1"/>
+	<additionalEffects evadingChange="0" criticalHitsChange="1" reflectSkills="false" lockEquipment="false"/>
+</openrpgmaker-condition>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-mainmenulayout name="Skills Menu">
+	<onAcceptEvent type="topLevelEvent"/>
+	<onCancelEvent type="topLevelEvent"/>
+	<onLoadEvent type="topLevelEvent"/>
+	<onLeaveEvent type="topLevelEvent"/>
+	<onUpArrowEvent type="topLevelEvent"/>
+	<onDownArrowEvent type="topLevelEvent"/>
+	<onLeftArrowEvent type="topLevelEvent"/>
+	<onRightArrowEvent type="topLevelEvent"/>
+</openrpgmaker-mainmenulayout>

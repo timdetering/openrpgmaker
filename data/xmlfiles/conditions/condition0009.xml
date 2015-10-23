@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-condition name="Haste" icon="" extent="0" group="0" priority="50" actionRestriction="0" hitPercentage="100" animationID="6">
+	<susceptibility A="100" B="80" C="60" D="30" E="0"/>
+	<recovery abatesAfterNumTurns="0" abatesAfterNumTurns="0" perTurnRecoveryChance="0" physicalDamageRecoveryChance="0"/>
+	<statAlterations attack="100" defense="100" wisdom="100" agility="200"/>
+	<preventSkills withAttackInfluence="false" attackInfluence="0" withWisdomInfluence="false" wisdomInfluence="0"/>
+	<hpEffect effect="0" percentPerTurn="0" amountPerTurn="0" amountPerNumSteps="0" numSteps="1"/>
+	<mpEffect effect="0" percentPerTurn="0" amountPerTurn="0" amountPerNumSteps="0" numSteps="1"/>
+	<additionalEffects evadingChange="1" criticalHitsChange="2" reflectSkills="false" lockEquipment="false"/>
+</openrpgmaker-condition>

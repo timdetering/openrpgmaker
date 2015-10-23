@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-vehicle name="Vehicle00" sprite="0" passingPhase="0" landingPhase="0" flying="false">
+	<bgm location="" volume="1" panning="0" speed="1" fadeInTime="0" retainPitch="true"/>
+</openrpgmaker-vehicle>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-item name="Long Sword" description="A basic long sword." price="70" type="weapon" skillID="-1">
+	<usableBy usableBy="heroes">
+		1111
+	</usableBy>
+	<attributes>
+		10000000000000000
+	</attributes>
+	<conditions inflictConditions="true" effectivenessProbability="0">
+	</conditions>
+	<statChange attack="9" defense="0" wisdom="0" agility="0"/>
+	<animation movementBeforeAttack="none" numberOfAttacks="1" animationID="0" rangedWeaponAnimationID="2097409" trajectory="returnafterstriking" targetting="single" animationSpeed="fast" weaponAnimation="false" afterImage="false" rangedWeapon="true" battleAnimationID="0"/>
+	<options mpConsumed="0" hitProbability="90" twoHanded="false" alwaysAttackFirst="false" attackTwice="false" attackAllEnemies="false" ignoreEnemyEvasion="false" cursed="false" usableOnTheDead="false"/>
+</openrpgmaker-item>

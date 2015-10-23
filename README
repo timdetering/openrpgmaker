@@ -1,0 +1,72 @@
+***************************************************************************
+*   README for Open RPG Maker                                             *
+***************************************************************************
+*   Copyright (C) 2007 by Justin (Tuxinator) Davis                        *
+*   tuxdavis@gmail.com                                                    *
+*                                                                         *
+*   This program is free software; you can redistribute it and/or modify  *
+*   it under the terms of the GNU General Public License as published by  *
+*   the Free Software Foundation; either version 2 of the License, or     *
+*   (at your option) any later version.                                   *
+*                                                                         *
+*   This program is distributed in the hope that it will be useful,       *
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+*   GNU General Public License for more details.                          *
+*                                                                         *
+*   You should have received a copy of the GNU General Public License     *
+*   along with this program; if not, write to the                         *
+*   Free Software Foundation, Inc.,                                       *
+*   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+***************************************************************************
+
+***************
+* Description *
+***************
+
+
+
+*****************
+* Documentation *
+*****************
+
+    AUTHORS:        Credits to the people that contributed to the creation of
+                    Open RPG Maker.
+    NEWS:           Changes since the previous version of "Open RPG Maker".
+    COPYING:        The GNU General Public License, which "Open RPG Maker" is
+                    licensed under.
+    INSTALL:        Instructions on requirements, compiling, and installing
+                    Open RPG Maker.
+    README:         (this file). Description, Documentation, etc.
+    TODO:           A wish list for future versions of Open RPG Maker.
+    XMLFILE_XXX:    Discusses how the XML file format for a given type works
+                    and how to right your own files using it.
+
+**********************
+* Running the Editor *
+**********************
+
+
+
+*****************
+* Screen Layout *
+*****************
+
+
+
+***********
+* The End *
+***********
+
+    Thank you for trying out Open RPG Maker.
+
+    If you like Open RPG Maker please rate and review it at the
+    Linux Game Tome:
+
+    http://www.happypenguin.org/
+
+    Search for "Open RPG Maker"!
+
+    Thanks!
+
+    The Open RPG Maker development team

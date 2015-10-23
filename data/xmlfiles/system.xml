@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-system title="" gameover="" mainMenuID="0">
+	<startLocations>
+		<party mapID="0" x="9" y="5" layer="0"/>
+		<vehicle mapID="-1" x="0" y="0" layer="0"/>
+		<vehicle mapID="-1" x="0" y="0" layer="0"/>
+		<vehicle mapID="-1" x="0" y="0" layer="0"/>
+		<vehicle mapID="-1" x="0" y="0" layer="0"/>
+		<vehicle mapID="-1" x="0" y="0" layer="0"/>
+		<vehicle mapID="-1" x="0" y="0" layer="0"/>
+		<vehicle mapID="-1" x="0" y="0" layer="0"/>
+		<vehicle mapID="-1" x="0" y="0" layer="0"/>
+	</startLocations>
+	<systemGraphics frameBGLocation="global::/images/system/default/frameBG.png" frameBorderLocation="global::/images/system/default/frameBorder.png" selectionBorderLocation="global::/images/system/default/selectionBorder.png" equipmentIndicatorsLocation="global::/images/system/default/equipmentIndicators.png" menuBGLocation="global::/images/system/default/menuBG.png" scrollArrowsLocation="global::/images/system/default/scrollArrows.png" grappleArmLocation="" grappleHookLocation="" timerNumbersLocation="global::/images/system/default/timerNumbers.png" fontShadowLocation="global::/images/system/default/fontShadow.png" defaultColor="global::/images/gradients/lightblue.png" fontShadowColor="#000000" defaultFontEnabledColor="#000000-#000000" defaultFontDisabledColor="#000000-#000000" stretchToFit="true"/>
+	<strings>
+		<string value=""/>
+		<string value="Surprised the enemy!"/>
+		<string value="Miss!"/>
+		<string value="Failed to escape!"/>
+		<string value="Victory!"/>
+		<string value="Annihilated..."/>
+		<string value="$(X) experience points gained!"/>
+		<string value="Found $(X)$(Currency)!"/>
+		<string value="$(X) found!"/>
+		<string value="$(Character) reached level $(X)!"/>
+		<string value="$(Character) learned $(X)!"/>
+		<string value="Good afternoon, sir."/>
+		<string value="Anything else I can do for you!"/>
+		<string value="Buy"/>
+		<string value="Sell"/>
+		<string value="Done"/>
+		<string value="What do you need?"/>
+		<string value="How many would you like?"/>
+		<string value="Pleasure doing business with you"/>
+		<string value="What would you like to sell?"/>
+		<string value="How many do you wish to sell?"/>
+		<string value="Pleasure doing business with you"/>
+		<string value="It&apos;s $(X)$(Currency) per night."/>
+		<string value="Would you like to stay?"/>
+		<string value="Yes"/>
+		<string value="No"/>
+		<string value="In possesion"/>
+		<string value="Equipped"/>
+		<string value="G"/>
+		<string value="Level"/>
+		<string value="L"/>
+		<string value="HP"/>
+		<string value="H"/>
+		<string value="MP"/>
+		<string value="M"/>
+		<string value="Normal"/>
+		<string value="Exp"/>
+		<string value="Attack"/>
+		<string value="Defense"/>
+		<string value="Wisdom"/>
+		<string value="Agility"/>
+		<string value="MP Use"/>
+		<string value="Weapon"/>
+		<string value="Shield"/>
+		<string value="Armor"/>
+		<string value="Helmet"/>
+		<string value="Accessory"/>
+		<string value="Fight"/>
+		<string value="Auto"/>
+		<string value="Flee"/>
+		<string value="Item"/>
+		<string value="Skill"/>
+		<string value="Equip"/>
+		<string value="Save"/>
+		<string value="Quit"/>
+		<string value="Status"/>
+		<string value="Row"/>
+		<string value="Order"/>
+		<string value="New Game"/>
+		<string value="Load Game"/>
+		<string value="Quit Game"/>
+		<string value="Wait"/>
+		<string value="Active"/>
+		<string value="Save to witch file?"/>
+		<string value="Load witch file?"/>
+		<string value="Do you really want to quit?"/>
+		<string value="Yes"/>
+		<string value="No"/>
+	</strings>
+	<randommapgenerators>
+		<buildinggenerator width="10" height="10" numRooms="normal" roomShape="rectangular" numEntrances="0" numFloors="1" blankTile="0000">
+			<interiorWallTiles ceiling="0000" lowerWall="0000" upperWall="0000" useLowerWall="false" useUpperWall="false"/>
+			<exteriorWallTiles ceiling="0000" lowerWall="0000" upperWall="0000" useLowerWall="false" useUpperWall="false"/>
+			<floorTiles floorA="0000" floorB="0000" floorC="0000" useFloorB="false" useFloorC="false"/>
+			<miscTiles ground="0000" stairsUp="0000" stairsDown="0000"/>
+		</buildinggenerator>
+		<caverngenerator width="20" height="15" blankTile="0000" surroundWithWall="true" wallPosition="above">
+			<wallTiles ceiling="0000" lowerWall="0000" upperWall="0000" useLowerWall="false" useUpperWall="false"/>
+			<floorTiles floorA="0000" floorB="0000" floorC="0000" useFloorB="false" useFloorC="false"/>
+		</caverngenerator>
+		<dungeongenerator blankTile="06a1" wallPosition="above">
+			<rooms num="20" minWidth="3" minHeight="3" maxWidth="5" maxHeight="5"/>
+			<hallLength min="10" max="20" removeDeadEnds="true"/>
+			<wallTiles ceiling="0000" lowerWall="0000" upperWall="0000" useLowerWall="true" useUpperWall="true"/>
+			<roomTiles floorA="0000" floorB="0000" floorC="0000" useFloorB="false" useFloorC="false"/>
+			<hallTiles floorA="0000" floorB="0000" floorC="0000" useFloorB="false" useFloorC="false"/>
+		</dungeongenerator>
+		<mazegenerator width="20" height="15" pathStructure="0" wallTile="0000" floorTile="0000" blankTile="0000"/>
+		<mountaingenerator/>
+		<towngenerator/>
+		<worldmapgenerator mapSize="medium" waterTile="0000" blankTile="0000">
+			<continent tile="0000" amount="normal" size="medium"/>
+		</worldmapgenerator>
+	</randommapgenerators>
+	<variables>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<string name=""/>
+		<number name="menuSelectedCharacterID"/>
+		<number name="menuCurrentItem"/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<number name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+		<switch name=""/>
+	</variables>
+	<battlecommands>
+		<command name="Attack" type="attack"/>
+		<command name="Skill" type="skill"/>
+		<command name="Defend" type="defend"/>
+		<command name="Item" type="item"/>
+		<command name="Escape" type="escape"/>
+	</battlecommands>
+	<skillSubsets/>
+	<screentransitions teleportErase="0" teleportShow="0" menuErase="0" menuShow="0" battleEntryErase="0" battleEntryShow="0" battleExitErase="0" battleExitShow="0"/>
+	<sfx>
+		<cursor location="" volume="1" panning="0" speed="1" numloops="0" retainpitch="true"/>
+		<selectchoice location="" volume="1" panning="0" speed="1" numloops="0" retainpitch="true"/>
+		<buzzer location="" volume="1" panning="0" speed="1" numloops="0" retainpitch="true"/>
+		<cancel location="" volume="1" panning="0" speed="1" numloops="0" retainpitch="true"/>
+		<battletransition location="" volume="1" panning="0" speed="1" numloops="0" retainpitch="true"/>
+		<fleebattle location="" volume="1" panning="0" speed="1" numloops="0" retainpitch="true"/>
+		<characterlevelup location="" volume="1" panning="0" speed="1" numloops="0" retainpitch="true"/>
+		<evadeattack location="" volume="1" panning="0" speed="1" numloops="0" retainpitch="true"/>
+		<itemused location="" volume="1" panning="0" speed="1" numloops="0" retainpitch="true"/>
+	</sfx>
+	<bgms>
+		<titlescreen location="" volume="1" panning="0" speed="1" fadeintime="0" retainpitch="true"/>
+		<battle location="" volume="1" panning="0" speed="1" fadeintime="0" retainpitch="true"/>
+		<victory location="" volume="1" panning="0" speed="1" fadeintime="0" retainpitch="true"/>
+		<inn location="" volume="1" panning="0" speed="1" fadeintime="0" retainpitch="true"/>
+		<gameover location="" volume="1" panning="0" speed="1" fadeintime="0" retainpitch="true"/>
+	</bgms>
+	<initialparty first="0" second="-1" third="-1" fourth="-1"/>
+	<phases>
+		<phase name="Player Passability"/>
+		<phase name="Jumping Phase"/>
+		<phase name="Grapple Pass"/>
+		<phase name="Grapple Hook"/>
+		<phase name="Move Down (Start)"/>
+		<phase name="Move Down (End)"/>
+		<phase name="Move Up (Start)"/>
+		<phase name="Move Up (End)"/>
+		<phase name="Phase 9"/>
+		<phase name="Phase 10"/>
+		<phase name="Phase 11"/>
+		<phase name="Phase 12"/>
+		<phase name="Phase 13"/>
+		<phase name="Phase 14"/>
+		<phase name="Phase 15"/>
+		<phase name="Phase 16"/>
+		<phase name="Phase 17"/>
+		<phase name="Phase 18"/>
+		<phase name="Phase 19"/>
+		<phase name="Phase 20"/>
+		<phase name="Phase 21"/>
+		<phase name="Phase 22"/>
+		<phase name="Phase 23"/>
+		<phase name="Phase 24"/>
+		<phase name="Phase 25"/>
+		<phase name="Phase 26"/>
+		<phase name="Phase 27"/>
+		<phase name="Phase 28"/>
+		<phase name="Phase 29"/>
+		<phase name="Phase 30"/>
+		<phase name="Phase 31"/>
+		<phase name="Phase 32"/>
+	</phases>
+</openrpgmaker-system>

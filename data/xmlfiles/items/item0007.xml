@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-item name="Pocket Shelter" description="Restores party&apos;s HP and MP. Only usable on field map." price="1000" type="medicine" numberOfUses="1">
+	<usableBy usableBy="heroes">
+		1111
+	</usableBy>
+	<cureCondition>
+	</cureCondition>
+	<options percentRestoredHP="100" amountRestoredHP="0" percentRestoredMP="100" amountRestoredMP="0" targetsSingleAlly="false" onlyUsableOnFieldMap="true" onlyUsableOnDeadCharacters="false"/>
+</openrpgmaker-item>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-item name="Defense Increase" description="Defense power increases by 3." price="200" type="seed" numberOfUses="1">
+	<usableBy usableBy="heroes">
+		1111
+	</usableBy>
+	<statChange maxHP="0" maxMP="0" attack="0" defense="3" wisdom="0" agility="0"/>
+</openrpgmaker-item>

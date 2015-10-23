@@ -1,0 +1,36 @@
+body
+{
+	background-color: #FFFFFF;
+	font-color: #000000;
+	font-family: Sans-Serif;
+}
+
+dt
+{
+	font-weight: bold;
+}
+
+ul
+{
+	list-style-type: disc;
+	padding: 0em 0em 0em 0em;
+	margin: 0em 0em 0em 1em;
+}
+
+table.list, th.list, td.list
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	border-collapse: collapse;
+}
+
+table.list
+{
+	width: 100%;
+}
+
+td.list
+{
+	padding: 3px;
+}

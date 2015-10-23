@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-monster name="Mon0000" attacksOftenMiss="false" aiLevel="0">
+	<graphic monsterAnimationID="0" transparent="false" flying="false" hueShift="0"/>
+	<stats maxHP="1" maxMP="1" attack="1" defense="1" wisdom="1" agility="1"/>
+	<conditionResists>
+		CCCCCCCCCC
+	</conditionResists>
+	<attributeResists>
+		CCCCCCCCCCCCCCCCC
+	</attributeResists>
+	<criticalHits hasCriticalHits="false" rate="3" multiplier="2"/>
+	<spoils experienceGain="0" moneyAquired="0" itemDropProbability="0"/>
+	<behavior/>
+	<battleEvent/>
+	<customAI/>
+</openrpgmaker-monster>

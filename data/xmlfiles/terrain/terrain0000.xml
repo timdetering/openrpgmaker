@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-terrain name="Template1" damage="0" encmultiplier="100" spritedisplay="semi-transparent">
+	<soundeffect onlyifdamaged="false" location="" volume="1" panning="0" speed="1" numLoops="0" retainPitch="true"/>
+	<background association="background">
+		<globalanimation id="0" type="background"/>
+		<bgimage hspeed="0" vspeed="0" location=""/>
+	</background>
+	<battletypes partyinitiative="0" enemybackattack="0" partysurroundattack="0" enemysurroundattack="0"/>
+	<griddepth depth="shallow"/>
+</openrpgmaker-terrain>

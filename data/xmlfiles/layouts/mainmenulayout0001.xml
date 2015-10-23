@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-mainmenulayout name="Status Menu">
+	<onAcceptEvent type="topLevelEvent"/>
+	<onCancelEvent type="topLevelEvent"/>
+	<onLoadEvent type="topLevelEvent"/>
+	<onLeaveEvent type="topLevelEvent"/>
+	<onUpArrowEvent type="topLevelEvent"/>
+	<onDownArrowEvent type="topLevelEvent"/>
+	<onLeftArrowEvent type="topLevelEvent">
+		<event type="variableOperation" operation="subtract" variableToChange="single" variableID="0" operand="value" value="1"/>
+		<event type="conditionalBranch">
+			<conditions conditionsToMatch="all" executeCustomHandlerIfConditionsNotMet="false">
+				<condition type="variable" comparison="&lt;" srcVariableID="0" dstValue="0" dstValueStoredInVariable="false"/>
+			</conditions>
+			<onTrueEvents>
+				<event type="variableOperation" operation="add" variableToChange="single" variableID="0" operand="value" value="4"/>
+			</onTrueEvents>
+		</event>
+		<event type="setScreenTransition" transitionType="menuErase" transition="noTransition"/>
+		<event type="setScreenTransition" transitionType="menuShow" transition="screenMovesRight"/>
+		<event type="insertComment" comment="The following two events are used to trick the system\ninto opening the same menu (however all the menu&apos;s\ntext is set based on the value of the variable that\nwas changed up above). The resulting effect is sliding\nthe next characters status screen over on top of the\ncurrent one.\n\nThe reason for the &quot;Exit Menu&quot; event at the end\nis otherwise the player will need to close out of each\nmenu one at a time. When the system is told to open\na menu it remembers the currently opened menu. So\nwhen it receives an &quot;Exit Menu&quot; event it simply closes\nthe menu the event occurred in, even if another menu\nis layed over the top of it.\n\nThe idea is that even when an &quot;Open Menu&quot; event occurs\nit opens the menu, but will finish processing the rest\nof the event that opened it."/>
+		<event type="openMenu" menuID="1" menuReferencedInVariable="false"/>
+		<event type="exitMenu"/>
+	</onLeftArrowEvent>
+	<onRightArrowEvent type="topLevelEvent">
+		<event type="variableOperation" operation="set" variableToChange="single" variableID="0" operand="expression" expression="($variable(1)+1)%4"/>
+		<event type="setScreenTransition" transitionType="menuErase" transition="noTransition"/>
+		<event type="setScreenTransition" transitionType="menuShow" transition="screenMovesLeft"/>
+		<event type="insertComment" comment="The following two events are used to trick the system\ninto opening the same menu (however all the menu&apos;s\ntext is set based on the value of the variable that\nwas changed up above). The resulting effect is sliding\nthe next characters status screen over on top of the\ncurrent one.\n\nThe reason for the &quot;Exit Menu&quot; event at the end\nis otherwise the player will need to close out of each\nmenu one at a time. When the system is told to open\na menu it remembers the currently opened menu. So\nwhen it receives an &quot;Exit Menu&quot; event it simply closes\nthe menu the event occurred in, even if another menu\nis layed over the top of it.\n\nThe idea is that even when an &quot;Open Menu&quot; event occurs\nit opens the menu, but will finish processing the rest\nof the event that opened it."/>
+		<event type="openMenu" menuID="1" menuReferencedInVariable="false"/>
+		<event type="exitMenu"/>
+	</onRightArrowEvent>
+	<object type="frame" objectName="frame_2" x="0" y="416" width="248" height="64">
+		<object type="text" objectName="txtCurrency" x="214" y="16" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" stringID="28" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="txtMoney" x="74" y="16" textType="string" textWidth="138" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" stringID="68" systemString="true" shadowColor="#000000"/>
+	</object>
+	<object type="frame" objectName="frame_3" x="248" y="0" width="392" height="128">
+		<object type="text" objectName="text_13" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" stringID="36" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_11" x="16" y="16" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" stringID="31" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_12" x="16" y="48" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" stringID="33" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_15" x="219" y="80" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" plainText="/" shadowColor="#000000"/>
+		<object type="text" objectName="text_18" x="219" y="48" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" plainText="/" shadowColor="#000000"/>
+		<object type="text" objectName="text_21" x="219" y="16" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" plainText="/" shadowColor="#000000"/>
+		<object type="text" objectName="txtMaxHP" x="238" y="16" textType="party member" textWidth="138" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="max hp" shadowColor="#000000"/>
+		<object type="text" objectName="txtMP" x="79" y="48" textType="party member" textWidth="138" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="mp" shadowColor="#000000"/>
+		<object type="text" objectName="txtMaxMP" x="238" y="48" textType="party member" textWidth="138" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="max mp" shadowColor="#000000"/>
+		<object type="text" objectName="txtExp" x="79" y="80" textType="party member" textWidth="138" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="experience" shadowColor="#000000"/>
+		<object type="text" objectName="txtExpToNextLevel" x="238" y="80" textType="party member" textWidth="138" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="experience to next level" shadowColor="#000000"/>
+		<object type="text" objectName="txtHP" x="79" y="16" textType="party member" textWidth="138" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="hp" shadowColor="#000000"/>
+	</object>
+	<object type="frame" objectName="frame_4" x="248" y="128" width="392" height="160">
+		<object type="text" objectName="text_23" x="16" y="16" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" stringID="37" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_24" x="16" y="48" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" stringID="38" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_25" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" stringID="39" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_26" x="16" y="112" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" stringID="40" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="txtTotalAttack" x="298" y="16" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="total attack" shadowColor="#000000"/>
+		<object type="text" objectName="txtTotalDefense" x="298" y="48" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="5" partyMemberTextType="total defense" shadowColor="#000000"/>
+		<object type="text" objectName="txtTotalWisdom" x="298" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="5" partyMemberTextType="total wisdom" shadowColor="#000000"/>
+		<object type="text" objectName="txtTotalAgility" x="298" y="112" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="5" partyMemberTextType="total agility" shadowColor="#000000"/>
+	</object>
+	<object type="frame" objectName="frame_5" x="248" y="288" width="392" height="192">
+		<object type="text" objectName="text_28" x="16" y="16" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="42" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_29" x="16" y="48" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="43" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_30" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="44" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_31" x="16" y="112" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="45" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="text_32" x="16" y="144" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="46" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="txtEquippedAccessory" x="137" y="144" textType="party member" textWidth="255" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="equipped accessory" partyMemberEquipmentTextType="name" shadowColor="#000000"/>
+		<object type="text" objectName="txtEquippedHelmet" x="137" y="112" textType="party member" textWidth="255" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="equipped helmet" partyMemberEquipmentTextType="name" shadowColor="#000000"/>
+		<object type="text" objectName="txtEquippedArmor" x="137" y="80" textType="party member" textWidth="255" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="equipped armor" partyMemberEquipmentTextType="name" shadowColor="#000000"/>
+		<object type="text" objectName="txtEquippedShield" x="137" y="48" textType="party member" textWidth="255" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="equipped shield" partyMemberEquipmentTextType="name" shadowColor="#000000"/>
+		<object type="text" objectName="txtEquippedWeapon" x="137" y="16" textType="party member" textWidth="255" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="equipped weapon" partyMemberEquipmentTextType="name" shadowColor="#000000"/>
+	</object>
+	<object type="frame" objectName="frame" x="0" y="0" width="248" height="416">
+		<object type="text" objectName="text" x="16" y="128" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" plainText="Name" shadowColor="#000000"/>
+		<object type="text" objectName="text_3" x="16" y="208" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" plainText="Class" shadowColor="#000000"/>
+		<object type="text" objectName="text_5" x="16" y="288" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" plainText="Condition" shadowColor="#000000"/>
+		<object type="text" objectName="text_7" x="16" y="368" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" plainText="Level" shadowColor="#000000"/>
+		<object type="text" objectName="txtRow" x="94" y="16" textType="plain text" textWidth="138" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" plainText="Front" shadowColor="#000000"/>
+		<object type="image" objectName="imgFaceGraphic" x="16" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="0" scaled="false" imageType="party member" memberID="4" graphic="face"/>
+		<object type="text" objectName="txtClass" x="38" y="240" textType="party member" textWidth="194" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="class" shadowColor="#000000"/>
+		<object type="text" objectName="txtCondition" x="38" y="320" textType="party member" textWidth="194" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="condition" shadowColor="#000000"/>
+		<object type="text" objectName="txtLevel" x="194" y="368" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="level" shadowColor="#000000"/>
+		<object type="text" objectName="txtName" x="38" y="160" textType="party member" textWidth="194" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" partyMemberID="4" partyMemberTextType="name" shadowColor="#000000"/>
+	</object>
+</openrpgmaker-mainmenulayout>

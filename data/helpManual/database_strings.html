@@ -1,0 +1,527 @@
+<html>
+	<head><link rel="stylesheet" type="text/css" href="style.css"/></head>
+	<body>
+		<span style="font-family: monospace; font-size: 12pt;">[<a href="userinterfaces.html">User Interfaces</a>]-&gt;[<a href="database.html">Database</a>]-&gt;[Strings Tab]</span><br/><br/>
+		The &quot;Strings Tab&quot; is split into three pages, and each string is fairly self explanatory.
+		So their will only be listed below what variables the strings allow, and what $(X) does if allowed.<br/><br/>
+		Each string may allow one or more of the following variables:<br/>
+		<span style="font-family: monospace;">
+			<strong>$(CURRENCY)</strong>: This will be replaced with the &quot;Currency&quot; string on <a href="database_page2.html">Page 2</a> under &quot;Other Strings&quot;.<br/>
+			<strong>$(CHARACTER)</strong>: This will be replaced with the name of the character being referred to.<br/>
+			<strong>$(X)</strong>: This gets handled differently depending on which string it appears in.
+		</span><br/><br/>
+		<span style="font-size: 18pt;">Page 1 strings:</span>
+		<table class="list">
+			<tr>
+				<th class="list">String Catagory</th>
+				<th class="list">String Name</th>
+				<th class="list">Accepts<br/>$(CURRENCY)</th>
+				<th class="list">Accepts<br/>$(CHARACTER)</th>
+				<th class="list">Value of $(X)</th>
+			</tr>
+			<tr>
+				<td class="list">Battle Messages</td>
+				<td class="list">Message at the Beginning of Each Battle</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Battle Messages</td>
+				<td class="list">Initiative Message</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Battle Messages</td>
+				<td class="list">Miss Message</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Battle Messages</td>
+				<td class="list">Escape Failure Message</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Battle Messages</td>
+				<td class="list">Victory Message</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Battle Messages</td>
+				<td class="list">Defeat Message</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Battle Messages</td>
+				<td class="list">Experience Gain Message</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Amount of experience gained</td>
+			</tr>
+			<tr>
+				<td class="list">Battle Messages</td>
+				<td class="list">Money Aquisition Message</td>
+				<td class="list">YES</td>
+				<td class="list">NO</td>
+				<td class="list">Amount of money gained</td>
+			</tr>
+			<tr>
+				<td class="list">Battle Messages</td>
+				<td class="list">Item Discovery Message</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Name of item found</td>
+			</tr>
+			<tr>
+				<td class="list">Level-Up Messages</td>
+				<td class="list">Level Up</td>
+				<td class="list">NO</td>
+				<td class="list">YES</td>
+				<td class="list">Level number reached</td>
+			</tr>
+			<tr>
+				<td class="list">Level-Up Messages</td>
+				<td class="list">Skill Learned</td>
+				<td class="list">NO</td>
+				<td class="list">YES</td>
+				<td class="list">Name of skill aquired</td>
+			</tr>
+		</table><br/>
+		<span style="font-size: 18pt;">Page 2 strings:</span>
+		<table class="list">
+			<tr>
+				<th class="list">String Catagory</th>
+				<th class="list">String Name</th>
+				<th class="list">Accepts<br/>$(CURRENCY)</th>
+				<th class="list">Accepts<br/>$(CHARACTER)</th>
+				<th class="list">Value of $(X)</th>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Greeting</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">After First Transaction</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Buy</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Sell</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Done</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Choosing an Item to Buy</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Choosing How Many to Buy</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Buy Transaction Completed</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Choosing an Item to Sell</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Choosing How Many to Sell</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Shop Messages</td>
+				<td class="list">Sell Transaction Completed</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Inn Messages</td>
+				<td class="list">Price Introduction</td>
+				<td class="list">YES</td>
+				<td class="list">NO</td>
+				<td class="list">Inn price</td>
+			</tr>
+			<tr>
+				<td class="list">Default Inn Messages</td>
+				<td class="list">Accept Inquiry</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Inn Messages</td>
+				<td class="list">Accept</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Default Inn Messages</td>
+				<td class="list">Decline</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Other Strings</td>
+				<td class="list">Items Possessed</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Other Strings</td>
+				<td class="list">Items Equipped</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Other Strings</td>
+				<td class="list">Currency</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+		</table><br/>
+		<span style="font-size: 18pt;">Page 2 strings:</span>
+		<table class="list">
+			<tr>
+				<th class="list">String Catagory</th>
+				<th class="list">String Name</th>
+				<th class="list">Accepts<br/>$(CURRENCY)</th>
+				<th class="list">Accepts<br/>$(CHARACTER)</th>
+				<th class="list">Value of $(X)</th>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">Level</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">Level (Short Form)</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">HP</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">HP (Short Form)</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">MP</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">MP (Short Form)</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">MP Consumed</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">Normal Status</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">Attack</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">Defense</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">Wisdom</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">Agility</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Statistics</td>
+				<td class="list">Experience</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Equipment</td>
+				<td class="list">Weapon</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Equipment</td>
+				<td class="list">Shield</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Equipment</td>
+				<td class="list">Armor</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Equipment</td>
+				<td class="list">Helmet</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Equipment</td>
+				<td class="list">Accessory</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Fight</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Skill</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Status</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">New Game</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Auto-Fight</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Equip</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Row</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Load Game</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Escape</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Save</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Order</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">End Game</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Item</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Quit</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Wait ON</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Commands</td>
+				<td class="list">Wait OFF</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Save and Quit Screen Messages</td>
+				<td class="list">Choosing a Save Slot</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Save and Quit Screen Messages</td>
+				<td class="list">Choosing Which Slot to Load</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Save and Quit Screen Messages</td>
+				<td class="list">Confirm Quit</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Save and Quit Screen Messages</td>
+				<td class="list">File</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Save and Quit Screen Messages</td>
+				<td class="list">Yes</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+			<tr>
+				<td class="list">Save and Quit Screen Messages</td>
+				<td class="list">No</td>
+				<td class="list">NO</td>
+				<td class="list">NO</td>
+				<td class="list">Not used</td>
+			</tr>
+		</table>
+	</body>
+</html>

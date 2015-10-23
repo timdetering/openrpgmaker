@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-condition name="Blind" icon="" extent="0" group="2" priority="50" actionRestriction="0" hitPercentage="20" animationID="6">
+	<susceptibility A="90" B="70" C="50" D="30" E="0"/>
+	<recovery abatesAfterNumTurns="3" abatesAfterNumTurns="3" perTurnRecoveryChance="20" physicalDamageRecoveryChance="0"/>
+	<statAlterations attack="100" defense="100" wisdom="100" agility="100"/>
+	<preventSkills withAttackInfluence="false" attackInfluence="0" withWisdomInfluence="false" wisdomInfluence="0"/>
+	<hpEffect effect="0" percentPerTurn="0" amountPerTurn="0" amountPerNumSteps="0" numSteps="1"/>
+	<mpEffect effect="0" percentPerTurn="0" amountPerTurn="0" amountPerNumSteps="0" numSteps="1"/>
+	<additionalEffects evadingChange="0" criticalHitsChange="0" reflectSkills="false" lockEquipment="false"/>
+</openrpgmaker-condition>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-item name="Dragon Sword" description="A one-handed sword made from dragon scales." price="30000" type="weapon" skillID="-1">
+	<usableBy usableBy="heroes">
+		1111
+	</usableBy>
+	<attributes>
+		10000000000000000
+	</attributes>
+	<conditions inflictConditions="true" effectivenessProbability="0">
+	</conditions>
+	<statChange attack="300" defense="0" wisdom="0" agility="0"/>
+	<animation movementBeforeAttack="stepforward" numberOfAttacks="1" animationID="0" rangedWeaponAnimationID="1" trajectory="returnafterstriking" targetting="strikeeachinturn" animationSpeed="fast" weaponAnimation="false" afterImage="false" rangedWeapon="false" battleAnimationID="14058672"/>
+	<options mpConsumed="0" hitProbability="90" twoHanded="false" alwaysAttackFirst="false" attackTwice="false" attackAllEnemies="false" ignoreEnemyEvasion="false" cursed="false" usableOnTheDead="false"/>
+</openrpgmaker-item>

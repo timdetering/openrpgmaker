@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-mainmenulayout name="Confirm Quit Menu">
+	<onAcceptEvent type="topLevelEvent"/>
+	<onCancelEvent type="topLevelEvent">
+		<event type="playSystemSoundEffect" effect="Cancel"/>
+		<event type="exitMenu"/>
+	</onCancelEvent>
+	<onLoadEvent type="topLevelEvent"/>
+	<onLeaveEvent type="topLevelEvent"/>
+	<onUpArrowEvent type="topLevelEvent"/>
+	<onDownArrowEvent type="topLevelEvent"/>
+	<onLeftArrowEvent type="topLevelEvent"/>
+	<onRightArrowEvent type="topLevelEvent"/>
+	<navigation wrapHorizontally="true" wrapVertically="true">
+		<object name="saYes" row="0" column="0"/>
+		<object name="saNo" row="1" column="0"/>
+	</navigation>
+	<object type="frame" objectName="frame_2" x="264" y="176" width="112" height="128">
+		<object type="selectable area" objectName="saYes" x="16" y="16" width="80" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saNo"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saNo"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="quitGame"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_2" x="8" y="8" textType="string" textWidth="64" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" stringID="66" systemString="true" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saNo" x="16" y="64" width="80" height="48">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saYes"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saYes"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="exitMenu"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="text_3" x="8" y="8" textType="string" textWidth="64" alignment="center" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" stringID="67" systemString="true" shadowColor="#000000"/>
+		</object>
+	</object>
+	<object type="frame" objectName="frame" x="68" y="80" width="504" height="64">
+		<object type="text" objectName="text" x="16" y="16" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" stringID="65" systemString="true" shadowColor="#000000"/>
+	</object>
+</openrpgmaker-mainmenulayout>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-monsteranimation name="Llamyt">
+	<pose name="Idle Stance" location="local::/images/monsters/Llamyt/llamytIdle.png" numFrames="4" fps="8" pingPong="false"/>
+	<pose name="Attack" location="local::/images/monsters/Llamyt/llamytAttack.png" numFrames="5" fps="8" pingPong="false"/>
+	<pose name="Skill Used" location="local::/images/monsters/Llamyt/llamytSkill.png" numFrames="5" fps="8" pingPong="false"/>
+	<pose name="Dieing" location="local::/images/monsters/Llamyt/llamytDieing.png" numFrames="8" fps="8" pingPong="false"/>
+	<pose name="Dead" location="local::/images/monsters/Llamyt/llamytDead.png" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="Damaged" location="local::/images/monsters/Llamyt/llamytDamaged.png" numFrames="4" fps="8" pingPong="false"/>
+	<pose name="Bad Status" location="local::/images/monsters/Llamyt/llamytDebuff.png" numFrames="16" fps="8" pingPong="false"/>
+	<pose name="Defending" location="local::/images/monsters/Llamyt/llamytDefending.png" numFrames="16" fps="8" pingPong="false"/>
+	<pose name="Running Left" location="local::/images/monsters/Llamyt/llamytRunLeft.png" numFrames="8" fps="8" pingPong="false"/>
+	<pose name="Running Right" location="local::/images/monsters/Llamyt/llamytRunRight.png" numFrames="8" fps="8" pingPong="false"/>
+	<pose name="Item Used" location="local::/images/monsters/Llamyt/llamytItem.png" numFrames="20" fps="8" pingPong="false"/>
+	<pose name="Wounded" location="local::/images/monsters/Llamyt/llamytWounded.png" numFrames="16" fps="8" pingPong="false"/>
+	<pose name="Victory" location="local::/images/monsters/Llamyt/llamytVictory.png" numFrames="12" fps="8" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+	<pose name="" location="" numFrames="1" fps="1" pingPong="false"/>
+</openrpgmaker-monsteranimation>

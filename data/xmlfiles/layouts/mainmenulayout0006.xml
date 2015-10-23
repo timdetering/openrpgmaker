@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-mainmenulayout name="Items Menu">
+	<onAcceptEvent type="topLevelEvent"/>
+	<onCancelEvent type="topLevelEvent"/>
+	<onLoadEvent type="topLevelEvent"/>
+	<onLeaveEvent type="topLevelEvent"/>
+	<onUpArrowEvent type="topLevelEvent"/>
+	<onDownArrowEvent type="topLevelEvent"/>
+	<onLeftArrowEvent type="topLevelEvent"/>
+	<onRightArrowEvent type="topLevelEvent"/>
+	<object type="frame" objectName="frame" x="0" y="0" width="640" height="64">
+		<object type="text" objectName="txtDescription" x="16" y="16" textType="item" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" itemID="1" itemTextType="description" itemIDIsReferencedInVariable="true" shadowColor="#000000"/>
+	</object>
+	<object type="frame" objectName="frame_2" x="0" y="64" width="640" height="416">
+		<object type="item list" objectName="itemList" x="16" y="16" width="608" height="384" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" numColumns="2" textAlignment="left" selectionVariableID="1" rowSpacing="0" columnSpacing="8" rowHeight="48" textXOffset="8" textYOffset="8" fontID="2" sortingEnabled="true">
+			<onSelectionChangedEvent type="topLevelEvent">
+				<event type="changeText" objectName="txtDescription" saveSlotID="0" textType="item" itemID="1" itemTextType="description" itemIDIsReferencedInVariable="true"/>
+			</onSelectionChangedEvent>
+			<onAcceptEvent type="topLevelEvent"/>
+			<onCancelEvent type="topLevelEvent"/>
+			<settings tableType="items" showCommonItems="true" showWeapons="true" showShields="true" showArmor="true" showHelmets="true" showAccessories="true" showMedicine="true" showSkillBooks="true" showSeeds="true" showSkillScrolls="true" showSwitches="true" showEvents="true"/>
+		</object>
+	</object>
+</openrpgmaker-mainmenulayout>

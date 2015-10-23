@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-item name="Long Spear" description="A basic long spear." price="110" type="weapon" skillID="-1">
+	<usableBy usableBy="heroes">
+		1111
+	</usableBy>
+	<attributes>
+		01000000000000000
+	</attributes>
+	<conditions inflictConditions="true" effectivenessProbability="0">
+	</conditions>
+	<statChange attack="12" defense="0" wisdom="0" agility="0"/>
+	<animation movementBeforeAttack="movetotarget" numberOfAttacks="1" animationID="256" rangedWeaponAnimationID="32" trajectory="returnafterstriking" targetting="strikeeachinturn" animationSpeed="slow" weaponAnimation="true" afterImage="false" rangedWeapon="false" battleAnimationID="178724952"/>
+	<options mpConsumed="0" hitProbability="90" twoHanded="true" alwaysAttackFirst="false" attackTwice="false" attackAllEnemies="false" ignoreEnemyEvasion="false" cursed="false" usableOnTheDead="false"/>
+</openrpgmaker-item>

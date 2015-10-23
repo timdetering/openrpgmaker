@@ -1,0 +1,283 @@
+<html>
+	<head><link rel="stylesheet" type="text/css" href="style.css"/></head>
+	<body>
+		<span style="font-family: monospace; font-size: 12pt;">[File Format Changes]</span><br/><br/>
+		<ul>
+			<li id="Version0to1"><span style="font-size: 18pt;"><strong>Version 0 to 1</strong></span>
+				<ul>
+					<li><strong>system.xml</strong>
+						<ul>
+							<li>Add attribute <strong>&lt;layer=&quot;1&quot;&gt;</strong> in each child node of <strong>&lt;startLocations&gt;</strong></li>
+							<li>Delete <strong>&lt;menucommands&gt;</strong> node from <strong>&lt;openrpgmaker-system&gt;</strong></li>
+							<li>Delete attribute <strong>&quot;spriteShadowLocation&quot;</strong> from <strong>&lt;systemGraphics&gt;</strong> node</li>
+							<li>Add attribute <strong>&lt;grappleArmLocation=&quot;&quot;&gt;</strong> to <strong>&lt;systemGraphics&gt;</strong> node</li>
+							<li>Add attribute <strong>&lt;grappleHookLocation=&quot;&quot;&gt;</strong> to <strong>&lt;systemGraphics&gt;</strong> node</li>
+							<li>Add <strong>&lt;phases&gt;</strong> child node to <strong>&lt;openrpgmaker-system&gt;</strong></li>
+							<li>Add 32 <strong>&lt;phase&gt;</strong> child nodes to <strong>&lt;phases&gt;</strong> node</li>
+							<li>For each <strong>&lt;phase&gt;</strong> child node add <strong>&quot;name&quot;</strong> attribute
+								<ul>
+									<li><strong>Phase 1&apos;s name</strong>: <strong>&quot;Player Passability&quot;</strong></li>
+									<li><strong>Phase 2&apos;s name</strong>: <strong>&quot;Jumping Phase&quot;</strong></li>
+									<li><strong>Phase 3&apos;s name</strong>: <strong>&quot;Grappler Pass&quot;</strong></li>
+									<li><strong>Phase 4&apos;s name</strong>: <strong>&quot;Grappler Hook&quot;</strong></li>
+									<li><strong>Phase 5&apos;s name</strong>: <strong>&quot;Move Down (Start)&quot;</strong></li>
+									<li><strong>Phase 6&apos;s name</strong>: <strong>&quot;Move Down (End)&quot;</strong></li>
+									<li><strong>Phase 7&apos;s name</strong>: <strong>&quot;Move Up (Start)&quot;</strong></li>
+									<li><strong>Phase 8&apos;s name</strong>: <strong>&quot;Move Up (End)&quot;</strong></li>
+									<li><strong>Rest of phase&apos;s names</strong>: <strong>&quot;Phase PHASE_ID+1&quot;</strong>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><strong>map*.xml</strong>
+						<ul>
+							<li>Add attribute <strong>&lt;borderTile=&quot;0000&quot;&gt;</strong> to <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+							<li>Add attribute <strong>&lt;name=&quot;Lower Layer&quot;&gt;</strong> to <strong>&lt;lowerlayer&gt;</strong> node</li>
+							<li>Add attribute <strong>&lt;name=&quot;Hero Layer&quot;&gt;</strong> to <strong>&lt;herolayer&gt;</strong> node</li>
+							<li>Add attribute <strong>&lt;name=&quot;Upper Layer&quot;&gt;</strong> to <strong>&lt;upperlayer&gt;</strong> node</li>
+							<li>If attribute <strong>&quot;wrapping&quot;</strong> inside <strong>&lt;openrpgmaker-map&gt;</strong> node is
+								<ul>
+									<li><strong>&quot;none&quot;</strong>
+										<ul>
+											<li>Add attribute <strong>&lt;horizontalMode=&quot;lockToEdge&quot;&gt;</strong> to <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+											<li>Add attribute <strong>&lt;verticalMode=&quot;lockToEdge&quot;&gt;</strong> to <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+										</ul>
+									</li>
+									<li><strong>&quot;horizontal&quot;</strong>
+										<ul>
+											<li>Add attribute <strong>&lt;horizontalMode=&quot;wrapAround&quot;&gt;</strong> to <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+											<li>Add attribute <strong>&lt;verticalMode=&quot;lockToEdge&quot;&gt;</strong> to <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+										</ul>
+									</li>
+									<li><strong>&quot;vertical&quot;</strong>
+										<ul>
+											<li>Add attribute <strong>&lt;horizontalMode=&quot;lockToEdge&quot;&gt;</strong> to <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+											<li>Add attribute <strong>&lt;verticalMode=&quot;wrapAround&quot;&gt;</strong> to <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+										</ul>
+									</li>
+									<li><strong>&quot;both&quot;</strong>
+										<ul>
+											<li>Add attribute <strong>&lt;horizontalMode=&quot;wrapAround&quot;&gt;</strong> to <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+											<li>Add attribute <strong>&lt;verticalMode=&quot;wrapAround&quot;&gt;</strong> to <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>Delete attribute <strong>&quot;wrapping&quot;</strong> from <strong>&lt;openrpgmaker-map&gt;</strong> node</li>
+							<li>Rename <strong>&lt;lowerlayer&gt;</strong> node to <strong>&lt;layer&gt;</strong></li>
+							<li>Rename <strong>&lt;herolayer&gt;</strong> node to <strong>&lt;layer&gt;</strong></li>
+							<li>Rename <strong>&lt;upperlayer&gt;</strong> node to <strong>&lt;layer&gt;</strong></li>
+							<li>Rename <strong>&lt;eventlayer&gt;</strong> node to <strong>&lt;mapEvents&gt;</strong></li>
+							<li>For each <strong>&lt;layer&gt;</strong> node
+								<ul>
+									<li>iterate over each tile coordinate and set it to <strong>&quot;00000001SSTTFF&quot;</strong>
+										<ul>
+											<li>replacing <strong>&quot;SS&quot;</strong> with the tilesetID</li>
+											<li>replacing <strong>&quot;TT&quot;</strong> with the tileID</li>
+											<li>replacing <strong>&quot;FF&quot;</strong> with the tileFlags</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>For each <strong>&lt;mapEvent&gt;</strong> node inside <strong>&lt;mapEvents&gt;</strong> node
+								<ul>
+									<li>For each <strong>&lt;page&gt;</strong> node inside <strong>&lt;mapEvent&gt;</strong> node
+										<ul>
+											<li>Add attribute <strong>&lt;layer=&quot;1&quot;&gt;</strong></li>
+											<li>Rename attribute <strong>&quot;eventLayer&quot;</strong> to <strong>&quot;relationToHero&quot;</strong></li>
+											<li>If <strong>&quot;relationToHero&quot;</strong> attribute is <strong>&quot;hero&quot;</strong> change value to <strong>&quot;besideHero&quot;</strong></li>
+											<li>For each <strong>&lt;event&gt;</strong> node and child <strong>&lt;event&gt;</strong> nodes
+												<ul>
+													<li>Add layer information to any events specifying map location</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><strong>tileset*.xml</strong>
+						<ul>
+							<li>Change attribute <strong>&lt;passability&gt;</strong> to <strong>&lt;phasePassability=&quot;00000000&quot;&gt;</strong></li>
+						</ul>
+					</li>
+					<li><strong>terrain*.xml</strong>
+						<ul>
+							<li>Remove <strong>&lt;vehicleinteractions&gt;</strong> node from <strong>&lt;openrpgmaker-terrain&gt;</strong> node</li>
+						</ul>
+					</li>
+					<li><strong>vehicle*.xml</strong>
+						<ul>
+							<li>Add attribute <strong>&lt;passingPhase=&quot;0&quot;&gt;</strong> to <strong>&lt;openrpgmaker-vehicle&gt;</strong> node</li>
+							<li>Add attribute <strong>&lt;landingPhase=&quot;0&quot;&gt;</strong> to <strong>&lt;openrpgmaker-vehicle&gt;</strong> node</li>
+						</ul>
+					</li>
+					<li><strong>battleanimation*.xml</strong>
+						<ul>
+							<li>Add attribute <strong>&lt;frameRate=&quot;12&quot;&gt;</strong> to <strong>&lt;openrpgmaker-battleanimation&gt;</strong> node</li>
+						</ul>
+					</li>
+					<li><strong>globalanimation*.xml</strong>
+						<ul>
+							<li>Add attribute <strong>&lt;frameRate=&quot;12&quot;&gt;</strong> to <strong>&lt;openrpgmaker-globalanimation&gt;</strong> node</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li id="Version1to2"><span style="font-size: 18pt;"><strong>Version 1 to 2</strong></span>
+				<ul>
+					<li><strong>tileset*.xml</strong>
+						<ul>
+							<li>For each <strong>&lt;tile&gt;</strong> node
+								<ul>
+									<li>Add attribute <strong>&lt;fps=&quot;8&quot;&gt;</strong></li>
+									<li>if tile type is animated-auto tile
+										<ul>
+											<li>Add attribute <strong>&lt;pingPong=&quot;true&quot;&gt;</strong></li>
+										</ul>
+									</li>
+									<li>else
+										<ul>
+											<li>Add attribute <strong>&lt;pingPong=&quot;false&quot;&gt;</strong></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>images
+						<ul>
+							<li>All images need to be converted to 32bit with full alpha support (replacing old transparent color FF00FF with a fully transparent pixel)</li>
+							<li>All animated single tiles need to be re-arranged into a single row of tiles</li>
+							<li>All map sprites need to be separated into individual images as follows
+								<ul>
+									<li>idle.png</li>
+									<li>walking.png</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><strong>battlesprite*.xml</strong>
+						<ul>
+							<li>Change <strong>&lt;openrpgmaker-battlesprite&gt;</strong> to <strong>&lt;openrpgmaker-charactersprite&gt;</strong></li>
+							<li>Create child node <strong>&lt;mapSprite&gt;</strong> inside <strong>&lt;openrpgmaker-charactersprite&gt;</strong></li>
+							<li>Create child node <strong>&lt;battleSprite&gt;</strong> inside <strong>&lt;openrpgmaker-charactersprite&gt;</strong></li>
+							<li>Add 32 <strong>&lt;pose&gt;</strong> nodes with default values to <strong>&lt;mapSprite&gt;</strong> node</li>
+							<li>Move all <strong>&lt;pose&gt;</strong> nodes in <strong>&lt;openrpgmaker-charactersprites&gt;</strong> to <strong>&lt;battleSprite&gt;</strong></li>
+						</ul>
+					</li>
+					<li>Rename <strong>&quot;/battlesprites&quot;</strong> folder to <strong>&quot;/charactersprites&quot;</strong></li>
+					<li>Replace each reference to a mapSprite&apos;s original image with an id of 0</li>
+					<li><strong>class*.xml</strong>
+						<ul>
+							<li>Change attribute <strong>&quot;battleSprite&quot;</strong> in <strong>&lt;openrpgmaker-class&gt;</strong> to <strong>&quot;sprite&quot;</strong></li>
+							<li>Add attribute <strong>&lt;spriteOpacity=&quot;100&quot;&gt;</strong> to <strong>&lt;openrpgmaker-class&gt;</strong> node</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li id="Version2to3"><span style="font-size: 18pt;"><strong>Version 2 to 3</strong></span>
+				<ul>
+					<li><strong>system.xml</strong>
+						<ul>
+							<li>Remove <strong>&quot;defaultColor&quot;</strong> attribute from <strong>&lt;systemGraphics&gt;</strong> node</li>
+							<li>Remove <strong>&quot;fontShadowLocation&quot;</strong> attribute from <strong>&lt;systemGraphics&qt;</strong> node</li>
+							<li>Add attribute <strong>&lt;defaultFontShadowColor=&quot;#000000&quot;&gt;</strong> to <strong>&lt;systemGraphics&gt;</strong> node</li>
+							<li>Add attribute <strong>&lt;defaultFontEnabledColor=&quot;#F0FAFF-#3899F6&quot;&gt;</strong> to <strong>&lt;systemGraphics&gt;</strong> node</li>
+							<li>Add attribute <strong>&lt;defaultFontDisabledColor=&quot;#C9C9CD-#1D1D1E&quot;&gt;</strong> to <strong>&lt;systemGraphics&gt;</strong> node</li>
+						</ul>
+					</li>
+					<li>for each font image
+						<ul>
+							<li>Upgrade it to 32bit image</li>
+							<li>Replace magenta(#FF00FF) pixels with transparent pixels</li>
+						</ul>
+					</li>
+					<li><strong>font*.xml</strong>
+						<ul>
+							<li>Add attribute <strong>&lt;characterHeight&quot;32&quot;&gt;</strong> to <strong>&lt;openrpgmaker-font&lt;</strong> node</li>
+							<li>Add attribute <strong>&lt;dropShadowXOffset&quot;2&quot;&gt;</strong> to <strong>&lt;openrpgmaker-font&lt;</strong> node</li>
+							<li>Add attribute <strong>&lt;dropShadowYOffset&quot;2&quot;&gt;</strong> to <strong>&lt;openrpgmaker-font&lt;</strong> node</li>
+						</ul>
+					</li>
+					<li><strong>/layouts/*.xml</strong>
+						<ul>
+							<li>for each <strong>&lt;object&gt;</strong> node who's attribute <strong>&quot;type&quot;</strong> is either <strong>&quot;text&quot;</strong> or <strong>&quot;item list&quot;</strong>
+								<ul>
+									<li>Load the <strong>&quot;enabledColor&quot;</strong> gradient</li>
+									<li>Change attribute <strong>&quot;enabledColor&quot;</strong> to <strong>&quot;#R1G1B1-#R2G2B2&quot;</strong>
+										<ul>
+											<li><strong>R1G1B1</strong> is the <strong>RGB</strong> color of the top-left pixel in the gradient image</li>
+											<li><strong>R2G2B2</strong> is the <strong>RGB</strong> color of the bottom-left pixel in the gradient image</li>
+										</ul>
+									</li>
+									<li>Load the <strong>&quot;disabledColor&quot;</strong> gradient</li>
+									<li>Change attribute <strong>&quot;disabledColor&quot;</strong> to <strong>&quot;#R1G1B1-#R2G2B2&quot;</strong>
+										<ul>
+											<li><strong>R1G1B1</strong> is the <strong>RGB</strong> color of the top-left pixel in the gradient image</li>
+											<li><strong>R2G2B2</strong> is the <strong>RGB</strong> color of the bottom-left pixel in the gradient image</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>Remove folder <strong>&quot;/images/gradients&quot;</strong> and all files and sub-folders</li>
+				</ul>
+			</li>
+			<li id="Version3to4"><span style="font-size: 18pt;"><strong>Version 3 to 4</strong></span>
+				<ul>
+					<li><strong>Number of phases has been reduced to 24</strong>
+						<ul>
+							<li>This is because the map data has gotten very complex and uses 5
+									bits for each phase (1 for passability and 4 for the 4 directions).</li>
+							<li>The reason 32 phases was chosen initially was because each phase
+									used only 1 bit on the map and could thus be saved using a single
+									32bit unsigned long (8 hexadecimal characters, with the tile data
+									using 6, making a total of 14 characters per tile)</li>
+							<li>The reason for 24 phases now is because each phase takes 5 bits
+									(for a total of 15 bytes) and the tile data takes 3 bytes (tilesetID,
+									tileID, and tileFlags) for a total of 18 bytes. 18 bytes can be evenly
+									encoded in base64 using 24 characters (hexadecimal for the original 32 phases
+									would take 46 characters, or 36 characters for 24 phases). As you can
+									see 24 characters is the most optimal for storage space while still allowing
+									16 phases to be defined by the user (8 are used internally by the system
+									for built-in mechanics such as jumping).
+							</li>
+						</ul>
+					</li>
+					<li><strong>map*.xml</strong>
+						<ul>
+							<li>for each layer
+								<ul>
+									<li>iterate over every tile and remove the last eight phase passabilities</li>
+									<li>then for each phase calculate the directional passability based on neighboring tiles</li>
+									<li>then convert the layer data to base64 encoding instead of hexadecimal<br/>
+										<strong>NOTE:</strong> Map data has gotten too complex to continue to use the more human readable hexadecimal format, because it would take too much space.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><strong>tileset*.xml</strong>
+						<ul>
+							<li>for each tile
+								<ul>
+									<li>remove the last eight phase passabilities from the &quot;phasePassability&quot; attribute</li>
+									<li>add the &quot;phaseDirections&quot; attribute with each phase that is on having all four directions set.</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><strong>vehicles*.xml</strong>
+						<ul>
+							<li>If the vehicle&apos;s &quot;passingPhase&quot; attribute is greater than 23 set it to 23 (only 24 phases available now)</li>
+							<li>If the vehicle&apos;s &quot;landingPhase&quot; attribute is greater than 23 set it to 23 (only 24 phases available now)</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

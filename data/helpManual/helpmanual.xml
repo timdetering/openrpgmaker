@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<openrpgmaker-helpmanual>
+	<indexList>
+		<index name="Main Window" file="/mainwindow.html"/>
+		<index name="Map Properties" file="/mapproperties.html"/>
+		<index name="Random Map Generator" file="/randommapgenerator.html"/>
+		<index name="Dungeon Generator" file="/randommapgenerator_dungeonstructure.html"/>
+		<index name="Cavern Generator" file="/randommapgenerator_cavernstructure.html"/>
+		<index name="World Map Generator" file="/randommapgenerator_worldmap.html"/>
+		<index name="Maze Generator" file="/randommapgenerator_maze.html"/>
+		<index name="Database" file="/database.html"/>
+		<index name="Database::Tilesets" file="/database_tilesets.html"/>
+		<index name="Database::Terrain" file="/database_terrain.html"/>
+		<index name="Database::Terrain::GridDepth" file="database_terrain_griddepth.html"/>
+		<index name="Database::MapSprites" file="notimplemented.html"/>
+		<index name="Database::Characters" file="/notimplemented.html"/>
+		<index name="Database::Classes" file="/notimplemented.html"/>
+		<index name="Database::BattleCharacters " file="/notimplemented.html"/>
+		<index name="Database::Skills" file="/notimplemented.html"/>
+		<index name="Database::Items" file="/notimplemented.html"/>
+		<index name="Database::Attributes" file="/notimplemented.html"/>
+		<index name="Database::Conditions" file="/notimplemented.html"/>
+		<index name="Database::Strings" file="/database_strings.html"/>
+		<index name="Database::System" file="/notimplemented.html"/>
+		<index name="Database::CommonEvents" file="/notimplemented.html"/>
+		<index name="Database::MonsterAnimations" file="/notimplemented.html"/>
+		<index name="Database::Monsters" file="/notimplemented.html"/>
+		<index name="Database::MonsterGroups" file="/notimplemented.html"/>
+		<index name="Database::BattleAnimations" file="/notimplemented.html"/>
+		<index name="Database::GlobalAnimations" file="/notimplemented.html"/>
+		<index name="Database::BattleLayouts" file="/notimplemented.html"/>
+		<index name="Tutorials" file="/orpgmtutorials.html"/>
+		<index name="Tutorials::MapEditor" file="/orpgmtutorials_mapeditor.html"/>
+		<index name="Tutorials::MapEditor::AreaMode" file="/orpgmtutorials_mapeditor_areamode.html"/>
+		<index name="Tutorials::MapEditor::DrawMode" file="/orpgmtutorials_mapeditor_drawmode.html"/>
+		<index name="Tutorials::MapEditor::EventMode" file="/orpgmtutorials_mapeditor_eventmode.html"/>
+		<index name="Tutorials::MapEditor::SelectionMode" file="/orpgmtutorials_mapeditor_selectionmode.html"/>
+		<index name="Tutorials::MapEditor::TilingMode" file="/orpgmtutorials_mapeditor_tilingmode.html"/>
+		<index name="Tutorials::WorldMapGenerator" file="/orpgmtutorials_worldmapgenerator.html"/>
+		<index name="Next Release" file="/nextrelease.html"/>
+		<index name="Passability" file="/notimplemented.html"/>
+		<index name="File Format Changes" file="/fileformatchanges.html"/>
+	</indexList>
+	<contentTree>
+		<item name="User Interfaces" file="/userinterfaces.html">
+			<item name="Main Window" file="/mainwindow.html">
+				<item name="Menu Bar" file="/mainwindow_menubar.html">
+					<item name="Project" file="/mainwindow_menubar_project.html"/>
+					<item name="Map" file="/mainwindow_menubar_map.html"/>
+					<item name="Tools" file="/mainwindow_menubar_tools.html"/>
+					<item name="Game" file="/mainwindow_menubar_game.html"/>
+					<item name="Help" file="/mainwindow_menubar_help.html"/>
+				</item>
+				<item name="Tool Bar" file="/mainwindow_toolbar.html"/>
+				<item name="Map Selector" file="/mainwindow_mapselector.html"/>
+				<item name="Map Editor" file="/mainwindow_mapeditor.html"/>
+				<item name="Tile Selector" file="/mainwindow_tileselector.html"/>
+				<item name="Layers" file="/notimplemented.html"/>
+				<item name="Passability" file="/notimplemented.html"/>
+			</item>
+			<item name="Map Properties" file="/mapproperties.html"/>
+			<item name="Random Map Generator" file="/randommapgenerator.html">
+				<item name="Dungeon-Like Structure" file="/randommapgenerator_dungeonstructure.html"/>
+				<item name="Cavern-Like Structure" file="/randommapgenerator_cavernstructure.html"/>
+				<item name="Mountain-Like Structure" file="/notimplemented.html"/>
+				<item name="World Map" file="/randommapgenerator_worldmap.html"/>
+				<item name="Town" file="/notimplemented.html"/>
+				<item name="Building" file="/notimplemented.html"/>
+				<item name="Maze" file="/randommapgenerator_maze.html"/>
+			</item>
+			<item name="Database" file="/database.html">
+				<item name="Tilesets Tab" file="/database_tilesets.html"/>
+				<item name="Terrain Tab" file="/database_terrain.html">
+					<item name="Grid Depth" file="/database_terrain_griddepth.html"/>
+				</item>
+				<item name="Map Sprites Tab" file="/notimplemented.html"/>
+				<item name="Characters Tab" file="/notimplemented.html"/>
+				<item name="Classes Tab" file="/notimplemented.html"/>
+				<item name="Battle Characters Tab" file="/notimplemented.html"/>
+				<item name="Skills Tab" file="/notimplemented.html"/>
+				<item name="Items Tab" file="/notimplemented.html"/>
+				<item name="Attributes Tab" file="/notimplemented.html"/>
+				<item name="Conditions Tab" file="/notimplemented.html"/>
+				<item name="Strings Tab" file="/database_strings.html"/>
+				<item name="System Tab" file="/notimplemented.html"/>
+				<item name="Common Events Tab" file="/notimplemented.html"/>
+				<item name="Monster Animations Tab" file="/notimplemented.html"/>
+				<item name="Monsters Tab" file="/notimplemented.html"/>
+				<item name="Monster Groups Tab" file="/notimplemented.html"/>
+				<item name="Battle Animations Tab" file="/notimplemented.html"/>
+				<item name="Global Animations Tab" file="/notimplemented.html"/>
+				<item name="Battle Layouts Tab" file="/notimplemented.html"/>
+			</item>
+		</item>
+		<item name="Open RPG Maker Tutorials" file="/orpgmtutorials.html">
+			<item name="Using the Map Editor" file="/orpgmtutorials_mapeditor.html">
+				<item name="Area Mode" file="/orpgmtutorials_mapeditor_areamode.html"/>
+				<item name="Draw Mode" file="/orpgmtutorials_mapeditor_drawmode.html"/>
+				<item name="Event Mode" file="/orpgmtutorials_mapeditor_eventmode.html"/>
+				<item name="Selection Mode" file="/orpgmtutorials_mapeditor_selectionmode.html"/>
+				<item name="Tiling Mode" file="/orpgmtutorials_mapeditor_tilingmode.html"/>
+			</item>
+			<item name="Using the World Map Generator" file="/orpgmtutorials_worldmapgenerator.html"/>
+		</item>
+		<item name="General Tutorials" file="/generaltutorials.html">
+		</item>
+		<item name="Next Release" file="/nextrelease.html"/>
+		<item name="File Format Changes" file="/fileformatchanges.html">
+			<item name="Version 0 to 1" file="/fileformatchanges.html#Version0to1"/>
+			<item name="Version 1 to 2" file="/fileformatchanges.html#Version1to2"/>
+			<item name="Version 2 to 3" file="/fileformatchanges.html#Version2to3"/>
+			<item name="Version 3 to 4" file="/fileformatchanges.html#Version3to4"/>
+		</item>
+	</contentTree>
+</openrpgmaker-helpmanual>

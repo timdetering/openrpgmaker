@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-condition name="Sleep" icon="local::/images/icons/sleep.png" extent="0" group="2" priority="52" actionRestriction="1" hitPercentage="100" animationID="6">
+	<susceptibility A="90" B="70" C="50" D="30" E="0"/>
+	<recovery abatesAfterNumTurns="1" abatesAfterNumTurns="1" perTurnRecoveryChance="25" physicalDamageRecoveryChance="50"/>
+	<statAlterations attack="100" defense="100" wisdom="100" agility="100"/>
+	<preventSkills withAttackInfluence="false" attackInfluence="0" withWisdomInfluence="false" wisdomInfluence="0"/>
+	<hpEffect effect="0" percentPerTurn="0" amountPerTurn="0" amountPerNumSteps="0" numSteps="1"/>
+	<mpEffect effect="0" percentPerTurn="0" amountPerTurn="0" amountPerNumSteps="0" numSteps="1"/>
+	<additionalEffects evadingChange="2" criticalHitsChange="0" reflectSkills="false" lockEquipment="false"/>
+</openrpgmaker-condition>

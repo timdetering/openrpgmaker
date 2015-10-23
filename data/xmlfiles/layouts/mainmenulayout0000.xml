@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-mainmenulayout name="Main Menu">
+	<onAcceptEvent type="topLevelEvent"/>
+	<onCancelEvent type="topLevelEvent">
+		<event type="playSystemSoundEffect" effect="Cancel"/>
+		<event type="conditionalBranch">
+			<conditions conditionsToMatch="none" executeCustomHandlerIfConditionsNotMet="true">
+				<condition type="currentHighlightedArea" objectName="saPartyMember1"/>
+				<condition type="currentHighlightedArea" objectName="saPartyMember2"/>
+				<condition type="currentHighlightedArea" objectName="saPartyMember3"/>
+				<condition type="previousSelectedArea" objectName="saPartyMember4"/>
+			</conditions>
+			<onTrueEvents>
+				<event type="exitMenu"/>
+			</onTrueEvents>
+			<onFalseEvents>
+				<event type="previousSelectedAreaBranch">
+					<previousSelectedArea objectName="saEquip">
+						<event type="changeSelectedArea" objectName="saEquip"/>
+					</previousSelectedArea>
+					<previousSelectedArea objectName="saSkill">
+						<event type="changeSelectedArea" objectName="saSkill"/>
+					</previousSelectedArea>
+					<previousSelectedArea objectName="saStatus">
+						<event type="changeSelectedArea" objectName="saStatus"/>
+					</previousSelectedArea>
+				</event>
+			</onFalseEvents>
+		</event>
+	</onCancelEvent>
+	<onLoadEvent type="topLevelEvent"/>
+	<onLeaveEvent type="topLevelEvent"/>
+	<onUpArrowEvent type="topLevelEvent"/>
+	<onDownArrowEvent type="topLevelEvent"/>
+	<onLeftArrowEvent type="topLevelEvent"/>
+	<onRightArrowEvent type="topLevelEvent"/>
+	<navigation wrapHorizontally="true" wrapVertically="true">
+		<object name="saItem" row="0" column="0"/>
+		<object name="saSkill" row="1" column="0"/>
+		<object name="saEquip" row="2" column="0"/>
+		<object name="saSave" row="3" column="0"/>
+		<object name="saStatus" row="4" column="0"/>
+		<object name="saRow" row="5" column="0"/>
+		<object name="saOrder" row="6" column="0"/>
+		<object name="saATBMode" row="7" column="0"/>
+		<object name="saQuit" row="8" column="0"/>
+	</navigation>
+	<object type="frame" objectName="frmParty" x="176" y="0" width="464" height="480">
+		<object type="image" objectName="imgPartyMember1" x="16" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="0" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		<object type="image" objectName="imgPartyMember2" x="16" y="132" scaledToWidth="0" scaledToHeight="0" saveSlotID="0" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+		<object type="image" objectName="imgPartyMember3" x="16" y="248" scaledToWidth="0" scaledToHeight="0" saveSlotID="0" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+		<object type="image" objectName="imgPartyMember4" x="16" y="364" scaledToWidth="0" scaledToHeight="0" saveSlotID="0" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+		<object type="selectable area" objectName="saPartyMember2" x="128" y="132" width="320" height="96">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saPartyMember1"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saPartyMember3"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="variableOperation" operation="set" variableToChange="single" variableID="0" operand="value" value="1"/>
+					<event type="previousSelectedAreaBranch">
+						<previousSelectedArea objectName="saEquip">
+							<event type="openMenu" menuID="4" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+						<previousSelectedArea objectName="saSkill">
+							<event type="openMenu" menuID="5" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+						<previousSelectedArea objectName="saStatus">
+							<event type="openMenu" menuID="1" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+					</event>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtPM2Name" x="8" y="12" textType="party member" textWidth="128" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2LevelShort" x="8" y="40" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2Status" x="53" y="40" textType="party member" textWidth="128" alignment="center" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="condition" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2Class" x="184" y="12" textType="party member" textWidth="128" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="class" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2HPShort" x="193" y="40" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2HP" x="209" y="40" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="hp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2HPSlash" x="257" y="40" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2MaxHP" x="264" y="40" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2MaxMP" x="264" y="68" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="max mp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2MPSlash" x="257" y="68" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2MP" x="209" y="68" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="mp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2MPShort" x="193" y="68" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="34" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2Level" x="19" y="40" textType="party member" textWidth="24" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2Exp" x="8" y="68" textType="party member" textWidth="84" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="experience" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2ExpNextLevel" x="99" y="68" textType="party member" textWidth="84" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="1" partyMemberTextType="experience to next level" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM2ExpSlash" x="92" y="68" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saPartyMember3" x="128" y="248" width="320" height="96">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saPartyMember2"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saPartyMember4"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="variableOperation" operation="set" variableToChange="single" variableID="0" operand="value" value="2"/>
+					<event type="previousSelectedAreaBranch">
+						<previousSelectedArea objectName="saEquip">
+							<event type="openMenu" menuID="4" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+						<previousSelectedArea objectName="saSkill">
+							<event type="openMenu" menuID="5" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+						<previousSelectedArea objectName="saStatus">
+							<event type="openMenu" menuID="1" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+					</event>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtPM3Name" x="8" y="12" textType="party member" textWidth="128" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3LevelShort" x="8" y="40" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3Status" x="53" y="40" textType="party member" textWidth="128" alignment="center" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="condition" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3Class" x="184" y="12" textType="party member" textWidth="128" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="class" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3HPShort" x="193" y="40" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3HP" x="209" y="40" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="hp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3HPSlash" x="257" y="40" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3MaxHP" x="264" y="40" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3MaxMP" x="264" y="68" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="max mp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3MPSlash" x="257" y="68" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3MP" x="209" y="68" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="mp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3MPShort" x="193" y="68" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="34" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3Level" x="19" y="40" textType="party member" textWidth="24" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3Exp" x="8" y="68" textType="party member" textWidth="84" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="experience" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3ExpNextLevel" x="99" y="68" textType="party member" textWidth="84" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="2" partyMemberTextType="experience to next level" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM3ExpSlash" x="92" y="68" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saPartyMember4" x="128" y="364" width="320" height="96">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saPartyMember3"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saPartyMember1"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="variableOperation" operation="set" variableToChange="single" variableID="0" operand="value" value="3"/>
+					<event type="previousSelectedAreaBranch">
+						<previousSelectedArea objectName="saEquip">
+							<event type="openMenu" menuID="4" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+						<previousSelectedArea objectName="saSkill">
+							<event type="openMenu" menuID="5" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+						<previousSelectedArea objectName="saStatus">
+							<event type="openMenu" menuID="1" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+					</event>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtPM4Name" x="8" y="12" textType="party member" textWidth="128" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4LevelShort" x="8" y="40" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4Status" x="53" y="40" textType="party member" textWidth="128" alignment="center" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="condition" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4Class" x="184" y="12" textType="party member" textWidth="128" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="class" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4HPShort" x="193" y="40" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4HP" x="209" y="40" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="hp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4HPSlash" x="257" y="40" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4MaxHP" x="264" y="40" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4MaxMP" x="264" y="68" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="max mp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4MPSlash" x="257" y="68" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4MP" x="209" y="68" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="mp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4MPShort" x="193" y="68" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="34" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4Level" x="19" y="40" textType="party member" textWidth="24" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4Exp" x="8" y="68" textType="party member" textWidth="84" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="experience" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4ExpNextLevel" x="99" y="68" textType="party member" textWidth="84" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="3" partyMemberTextType="experience to next level" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM4ExpSlash" x="92" y="68" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saPartyMember1" x="128" y="16" width="320" height="96">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saPartyMember4"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saPartyMember2"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="variableOperation" operation="set" variableToChange="single" variableID="0" operand="value" value="0"/>
+					<event type="previousSelectedAreaBranch">
+						<previousSelectedArea objectName="saEquip">
+							<event type="openMenu" menuID="4" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+						<previousSelectedArea objectName="saSkill">
+							<event type="openMenu" menuID="5" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+						<previousSelectedArea objectName="saStatus">
+							<event type="openMenu" menuID="1" menuReferencedInVariable="false"/>
+						</previousSelectedArea>
+					</event>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtPM1Name" x="8" y="12" textType="party member" textWidth="128" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1LevelShort" x="8" y="40" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1Status" x="53" y="40" textType="party member" textWidth="128" alignment="center" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="condition" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1Class" x="184" y="12" textType="party member" textWidth="128" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="class" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1HPShort" x="193" y="40" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1HP" x="209" y="40" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="hp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1HPSlash" x="257" y="40" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1MaxHP" x="264" y="40" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1MaxMP" x="264" y="68" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="max mp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1MPSlash" x="257" y="68" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1MP" x="209" y="68" textType="party member" textWidth="48" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="mp" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1MPShort" x="193" y="68" textType="string" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#82aaff-#1a3a8f" disabledColor="#c9c9cd-#202021" stringID="34" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1Level" x="19" y="40" textType="party member" textWidth="24" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1ExpSlash" x="92" y="68" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="/" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1Exp" x="8" y="68" textType="party member" textWidth="84" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="experience" shadowColor="#000000"/>
+			<object type="text" objectName="txtPM1ExpNextLevel" x="99" y="68" textType="party member" textWidth="84" alignment="right" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" partyMemberID="0" partyMemberTextType="experience to next level" shadowColor="#000000"/>
+		</object>
+	</object>
+	<object type="frame" objectName="frmCommands" x="0" y="0" width="176" height="320">
+		<object type="selectable area" objectName="saRow" x="16" y="176" width="144" height="32">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saStatus"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saOrder"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtRow" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="Row" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saATBMode" x="16" y="240" width="144" height="32">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saOrder"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saQuit"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="insertComment" comment="The reason ATB Mode is a variable on not a switch,\nsince it currently is either active or it isn&apos;t,\nis because this way more ATB Modes can be added later\nand just need to have a conditional branch (or later\ncase statement) added to handle the new value.\n\nYou&apos;ll notice it&apos;s essentially incrementing the\ncurrent ATB Mode variable by 1 than getting the\nremainder of it divided by 2 (the current number\nof different ATB Modes). To add additional ATB Modes\nyou simply need to increase the 2 to however many\ndifferent modes there are so it&apos;ll just keep cycling\nthrough them. Then add the appropriate conditional\nbranches (or cases to the case statemement when it&apos;s\nimplemented)."/>
+					<event type="variableOperation" operation="set" variableToChange="single" variableID="2" operand="expression" expression="($variable(3)+1)%2"/>
+					<event type="conditionalBranch">
+						<conditions conditionsToMatch="all" executeCustomHandlerIfConditionsNotMet="false">
+							<condition type="variable" comparison="==" srcVariableID="2" dstValue="0" dstValueStoredInVariable="false"/>
+						</conditions>
+						<onTrueEvents>
+							<event type="insertComment" comment="ATB Mode: Active"/>
+							<event type="changeText" objectName="txtATBMode" saveSlotID="0" plainText="Active" textType="plain text"/>
+						</onTrueEvents>
+					</event>
+					<event type="conditionalBranch">
+						<conditions conditionsToMatch="all" executeCustomHandlerIfConditionsNotMet="false">
+							<condition type="variable" comparison="==" srcVariableID="2" dstValue="1" dstValueStoredInVariable="false"/>
+						</conditions>
+						<onTrueEvents>
+							<event type="insertComment" comment="ATB Mode: Inactive"/>
+							<event type="changeText" objectName="txtATBMode" saveSlotID="0" plainText="Inactive" textType="plain text"/>
+						</onTrueEvents>
+					</event>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtATBMode" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="Active" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saOrder" x="16" y="208" width="144" height="32">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saRow"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saATBMode"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtOrder" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="Order" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saItem" x="16" y="16" width="144" height="32">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saQuit"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saSkill"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="openMenu" menuID="6" menuReferencedInVariable="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtItem" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="Item" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saSkill" x="16" y="48" width="144" height="32">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saItem"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saEquip"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="changeSelectedArea" objectName="saPartyMember1"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtSkill" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="Skill" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saEquip" x="16" y="80" width="144" height="32">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saSkill"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saSave"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="changeSelectedArea" objectName="saPartyMember1"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtEquip" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="Equip" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saSave" x="16" y="112" width="144" height="32">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saEquip"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saStatus"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="openMenu" menuID="2" menuReferencedInVariable="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtSave" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="Save" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saStatus" x="16" y="144" width="144" height="32">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saSave"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saRow"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="changeSelectedArea" objectName="saPartyMember1"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtStatus" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="Status" shadowColor="#000000"/>
+		</object>
+		<object type="selectable area" objectName="saQuit" x="16" y="272" width="144" height="32">
+			<events>
+				<highlighted type="topLevelEvent"/>
+				<leftArrow type="topLevelEvent"/>
+				<rightArrow type="topLevelEvent"/>
+				<upArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saATBMode"/>
+				</upArrow>
+				<downArrow type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Cursor"/>
+					<event type="changeSelectedArea" objectName="saItem"/>
+				</downArrow>
+				<selected type="topLevelEvent">
+					<event type="playSystemSoundEffect" effect="Select Choice"/>
+					<event type="openMenu" menuID="7" menuReferencedInVariable="false"/>
+				</selected>
+				<canceled type="topLevelEvent"/>
+			</events>
+			<object type="text" objectName="txtQuit" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="0" saveSlotID="0" enabledColor="#f0faff-#3b9af6" disabledColor="#c9c9cd-#202021" plainText="Quit" shadowColor="#000000"/>
+		</object>
+	</object>
+	<object type="frame" objectName="frmMoney" x="0" y="416" width="176" height="64">
+		<object type="text" objectName="txtCurrency" x="143" y="16" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#82aaff-#19388e" disabledColor="#c9c9cd-#1d1d1e" stringID="28" systemString="true" shadowColor="#000000"/>
+		<object type="text" objectName="txtMoney" x="15" y="16" textType="string" textWidth="126" alignment="right" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#c9c9cd-#1d1d1e" stringID="68" systemString="true" shadowColor="#000000"/>
+	</object>
+</openrpgmaker-mainmenulayout>

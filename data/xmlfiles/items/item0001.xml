@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-item name="High Potion" description="Restores 250 HP to a single ally." price="300" type="medicine" numberOfUses="1">
+	<usableBy usableBy="heroes">
+		1111
+	</usableBy>
+	<cureCondition>
+	</cureCondition>
+	<options percentRestoredHP="0" amountRestoredHP="250" percentRestoredMP="0" amountRestoredMP="0" targetsSingleAlly="true" onlyUsableOnFieldMap="false" onlyUsableOnDeadCharacters="false"/>
+</openrpgmaker-item>

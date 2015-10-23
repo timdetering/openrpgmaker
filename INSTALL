@@ -1,0 +1,18 @@
+Editor - Linux
+	run compile.sh from the same directory as this file
+  (any arguments passed to compile.sh will get forwarded to make)
+Editor - Windows
+	Too difficult to explain
+
+Engine - Linux
+	Not ready
+Engine - Windows
+	Not ready
+
+Runtime dependencies - Linux
+	Qt4 >= 4.3 (typically libqt4-core and libqt4-gui)
+	Qt4Webkit >= 4.3 (typically libqt4-webkit)
+
+Compiling Dependencies - Linux
+	Qt4-dev >= 4.3 (typically libqt4-dev)
+	g++ >= 4.4.3

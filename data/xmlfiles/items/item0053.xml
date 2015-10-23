@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-item name="Cloth Armor" description="Armor made from padded cloth." price="80" type="armor" skillID="0">
+	<usableBy usableBy="heroes">
+		1111
+	</usableBy>
+	<attributeResistance>
+		00000000000000000
+	</attributeResistance>
+	<conditions resistConditions="true" resistanceEffectiveness="100">
+	</conditions>
+	<statChange attack="0" defense="4" wisdom="0" agility="0"/>
+	<options preventCriticalHits="false" increaseEvasion="false" halfMPConsumption="false" noTerrainDamage="false" cursed="false"/>
+</openrpgmaker-item>

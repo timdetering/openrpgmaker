@@ -1,0 +1,45 @@
+/****************************************************************************
+ *  Open RPG Maker is free software: you can redistribute it and/or modify  *
+ *  it under the terms of the GNU General Public License as published by    *
+ *  the Free Software Foundation, either version 3 of the License, or       *
+ *  (at your option) any later version.                                     *
+ *                                                                          *
+ *  Open RPG Maker is distributed in the hope that it will be useful,       *
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of          *
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           *
+ *  GNU General Public License for more details.                            *
+ *                                                                          *
+ *  You should have received a copy of the GNU General Public License       *
+ *  along with Open RPG Maker. If not, see <http://www.gnu.org/licenses/>.  *
+ *                                                                          *
+ *  ---                                                                     *
+ *  Copyright (C) 2012, Justin Davis <tuxdavis@gmail.com>                   *
+ ****************************************************************************/
+
+#ifndef CONFIGUREEVENT_CHANGECHARACTERSPRITE_H
+#define CONFIGUREEVENT_CHANGECHARACTERSPRITE_H
+
+#include "ui_configureevent_changecharactersprite.h"
+
+class ConfigureEvent_ChangeCharacterSprite : public QDialog, public Ui::ConfigureEvent_ChangeCharacterSprite
+{
+	Q_OBJECT
+	public:
+		ConfigureEvent_ChangeCharacterSprite(QWidget *parent=0);
+		~ConfigureEvent_ChangeCharacterSprite();
+		void setCharacterID(int characterID);
+		void setIsReferencedCharacter(bool referenced);
+		void setSpriteID(int spriteID);
+		void setIsReferencedSprite(bool referenced);
+		int getCharacterID();
+		bool isReferencedCharacter();
+		int getSpriteID();
+		bool isReferencedSprite();
+	protected slots:
+		void on_bBrowseSpriteVariables_clicked();
+		void on_bBrowseCharacterVariables_clicked();
+		void on_rbSpecificSprite_toggled(bool checked);
+		void on_rbSpecificCharacter_toggled(bool checked);
+};
+
+#endif // CONFIGUREEVENT_CHANGECHARACTERSPRITE_H

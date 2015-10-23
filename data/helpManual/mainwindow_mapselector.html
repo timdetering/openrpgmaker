@@ -1,0 +1,36 @@
+<html>
+	<head><link rel="stylesheet" type="text/css" href="style.css"/></head>
+	<body>
+		<span style="font-family: monospace; font-size: 12pt;">[<a href="userinterfaces.html">User Interfaces</a>]-&gt;[<a href="mainwindow.html">Main Window</a>]-&gt;[Map Selector]</span><br/><br/>
+		<table>
+			<tr>
+				<td rowspan="2" style="vertical-align: top;"><img src="images/MainWindow_mapselector.png"/></td>
+				<td>
+					This is the map selection area. All of the maps are listed in a tree structure underneath the project.<br/>
+					Left clicking on a map will display it in the <a href="mainwindow_mapeditor.html">map editor</a> section.<br/>
+					Left clicking on an area will display the parent map in the <a href="mainwindow_mapeditor.html">map editor</a> section and allow to edit the selected area.
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Right clicking on a map will open the following context menu:<br/>
+					<img style="float: right;" src="images/MainWindow_mapselector_contextmenu.png"/>
+					<dl>
+						<dt>New Empty Map:</dt>
+						<dd>Creates a new blank map for editing and opens up the <a href="mapproperties.html">map properties</a> dialog for the newly created map.</dd>
+						<dt>New Random Map:</dt>
+						<dd>Opens the <a href="randommapgenerator.html">random map generator</a> dialog for creating a randomly generated map.</dd>
+						<dt>New Area:</dt>
+						<dd>Creates a new area in the selected map.</dd>
+						<dt>Delete Map:</dt>
+						<dd>Deletes the selected map (will ask for confirmation).</dd>
+						<dt>Map Properties:</dt>
+						<dd>Opens the <a href="mapproperties.html">map properties</a> dialog for the selected map.</dd>
+						<dt>Edit On-Load Event:</dt>
+						<dd>Opens the <a href="onloadeventeditor.html">on-load event editor</a> dialog for editing the maps on-load events (not yet implemented).</dd>
+					</dl>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

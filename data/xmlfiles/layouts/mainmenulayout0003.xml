@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-mainmenulayout name="Choose Load Slot">
+	<onAcceptEvent type="topLevelEvent"/>
+	<onCancelEvent type="topLevelEvent"/>
+	<onLoadEvent type="topLevelEvent"/>
+	<onLeaveEvent type="topLevelEvent"/>
+	<onUpArrowEvent type="topLevelEvent"/>
+	<onDownArrowEvent type="topLevelEvent"/>
+	<onLeftArrowEvent type="topLevelEvent"/>
+	<onRightArrowEvent type="topLevelEvent"/>
+	<navigation wrapHorizontally="true" wrapVertically="true">
+		<object name="saveSlot1" row="0" column="0"/>
+		<object name="saveSlot2" row="1" column="0"/>
+		<object name="saveSlot3" row="2" column="0"/>
+		<object name="saveSlot4" row="3" column="0"/>
+		<object name="saveSlot5" row="4" column="0"/>
+		<object name="saveSlot6" row="5" column="0"/>
+		<object name="saveSlot7" row="6" column="0"/>
+		<object name="saveSlot8" row="7" column="0"/>
+		<object name="saveSlot9" row="8" column="0"/>
+		<object name="saveSlot10" row="9" column="0"/>
+		<object name="saveSlot11" row="10" column="0"/>
+		<object name="saveSlot12" row="11" column="0"/>
+		<object name="saveSlot13" row="12" column="0"/>
+		<object name="saveSlot14" row="13" column="0"/>
+		<object name="saveSlot15" row="14" column="0"/>
+		<object name="saveSlot16" row="15" column="0"/>
+	</navigation>
+	<object type="frame" objectName="frame" x="0" y="0" width="640" height="64">
+		<object type="text" objectName="text" x="16" y="16" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="0" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" stringID="64" systemString="true" shadowColor="#000000"/>
+	</object>
+	<object type="scroll area" objectName="scrollArea" x="0" y="64" width="640" height="416" internalWidth="640" internalHeight="2048">
+		<object type="frame" objectName="frmSaveSlot5" x="0" y="512" width="640" height="128">
+			<object type="image" objectName="image_6" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="5" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_7" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="5" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_8" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="5" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot5" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot4"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot4"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot6"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot6"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_85" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="5" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_86" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="5" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="5" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_84" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="5" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_83" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="5" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_82" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="5" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_81" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="5" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_80" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="5" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_9" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="5" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot6" x="0" y="640" width="640" height="128">
+			<object type="image" objectName="image_10" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="6" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_11" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="6" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_12" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="6" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot6" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot5"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot5"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot7"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot7"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_87" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="6" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_88" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="6" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="6" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_79" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="6" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_78" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="6" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_77" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="6" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_76" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="6" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_75" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="6" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_13" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="6" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot7" x="0" y="768" width="640" height="128">
+			<object type="image" objectName="image_14" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="7" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_15" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="7" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_16" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="7" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot7" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot6"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot6"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot8"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot8"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_89" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="7" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_90" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="7" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="7" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_74" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="7" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_73" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="7" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_72" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="7" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_71" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="7" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_70" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="7" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_17" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="7" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot8" x="0" y="896" width="640" height="128">
+			<object type="image" objectName="image_18" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="8" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_19" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="8" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_20" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="8" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot8" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot7"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot7"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot9"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot9"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_91" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="8" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_92" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="8" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="8" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_69" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="8" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_68" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="8" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_67" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="8" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_66" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="8" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_65" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="8" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_21" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="8" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot9" x="0" y="1024" width="640" height="128">
+			<object type="image" objectName="image_22" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="9" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_23" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="9" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_24" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="9" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot9" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot8"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot8"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot10"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot10"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_93" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="9" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_94" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="9" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="9" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_64" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="9" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_63" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="9" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_62" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="9" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_61" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="9" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_60" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="9" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_25" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="9" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot10" x="0" y="1152" width="640" height="128">
+			<object type="image" objectName="image_26" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="10" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_27" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="10" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_28" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="10" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot10" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot9"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot9"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot11"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot11"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_95" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="10" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_96" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="10" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="10" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_59" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="10" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_58" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="10" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_57" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="10" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_56" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="10" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_55" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="10" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_29" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="10" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot11" x="0" y="1280" width="640" height="128">
+			<object type="image" objectName="image_30" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="11" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_31" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="11" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_32" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="11" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot11" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot10"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot10"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot12"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot12"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_97" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="11" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_98" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="11" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="11" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_54" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="11" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_53" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="11" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_52" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="11" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_51" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="11" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_50" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="11" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_33" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="11" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot12" x="0" y="1408" width="640" height="128">
+			<object type="image" objectName="image_34" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="12" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_35" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="12" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_36" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="12" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot12" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot11"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot11"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot13"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot13"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_99" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="12" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_100" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="12" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="12" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_49" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="12" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_48" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="12" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_47" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="12" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_46" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="12" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_45" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="12" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_37" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="12" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot13" x="0" y="1536" width="640" height="128">
+			<object type="image" objectName="image_38" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="13" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_39" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="13" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_40" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="13" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot13" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot12"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot12"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot14"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot14"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_101" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="13" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_102" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="13" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="13" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_44" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="13" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_43" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="13" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_42" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="13" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_41" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="13" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_40" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="13" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_41" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="13" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot14" x="0" y="1664" width="640" height="128">
+			<object type="image" objectName="image_42" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="14" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_43" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="14" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_44" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="14" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot14" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot13"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot13"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot15"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot15"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_103" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="14" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_104" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="14" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="14" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_39" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="14" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_38" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="14" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_37" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="14" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_36" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="14" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_35" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="14" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_45" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="14" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot15" x="0" y="1792" width="640" height="128">
+			<object type="image" objectName="image_46" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="15" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_47" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="15" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_48" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="15" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot15" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot14"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot14"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot16"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot16"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_105" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="15" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_106" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="15" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="15" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_34" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="15" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_33" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="15" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_32" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="15" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_31" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="15" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_30" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="15" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_49" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="15" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot16" x="0" y="1920" width="640" height="128">
+			<object type="image" objectName="image_50" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="16" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_51" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="16" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_52" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="16" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot16" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot15"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot15"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot1"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot1"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_107" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="16" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_108" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="16" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="16" shadowColor="#000000"/>
+			</object>
+			<object type="text" objectName="text_29" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="16" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_28" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="16" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_27" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="16" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_26" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="16" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_25" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="16" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_53" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="16" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+		</object>
+		<object type="frame" objectName="frmSaveSlot1" x="0" y="0" width="640" height="128">
+			<object type="image" objectName="image" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="1" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_2" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="1" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_3" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="1" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="image" objectName="image_4" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="1" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+			<object type="text" objectName="text_4" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="1" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_6" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="1" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_8" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="1" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_5" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="1" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_7" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="1" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="selectable area" objectName="saveSlot1" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot16"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot16"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot2"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot2"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_2" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="1" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_3" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="1" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="1" shadowColor="#000000"/>
+			</object>
+		</object>
+		<object type="frame" objectName="frmSaveSlot2" x="0" y="128" width="640" height="128">
+			<object type="image" objectName="image_5" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="2" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_54" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="2" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_55" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="2" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="image" objectName="image_56" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="2" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+			<object type="text" objectName="text_4_2" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="2" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_6_2" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="2" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_8_2" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="2" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_5_2" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="2" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_7_2" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="2" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="selectable area" objectName="saveSlot2" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot1"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot1"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot3"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot3"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_24" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="2" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_23" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="2" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="2" shadowColor="#000000"/>
+			</object>
+		</object>
+		<object type="frame" objectName="frmSaveSlot3" x="0" y="256" width="640" height="128">
+			<object type="image" objectName="image_57" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="3" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_58" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="3" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_59" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="3" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="image" objectName="image_60" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="3" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+			<object type="text" objectName="text_18" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="3" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_17" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="3" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_16" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="3" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_15" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="3" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_14" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="3" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="selectable area" objectName="saveSlot3" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot2"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot2"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot4"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot4"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_22" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="3" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_21" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="3" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="3" shadowColor="#000000"/>
+			</object>
+		</object>
+		<object type="frame" objectName="frmSaveSlot4" x="0" y="384" width="640" height="128">
+			<object type="image" objectName="image_61" x="528" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="4" scaled="false" imageType="party member" memberID="3" graphic="face"/>
+			<object type="image" objectName="image_62" x="416" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="4" scaled="false" imageType="party member" memberID="2" graphic="face"/>
+			<object type="image" objectName="image_63" x="304" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="4" scaled="false" imageType="party member" memberID="1" graphic="face"/>
+			<object type="text" objectName="text_13" x="16" y="48" textType="party member" textWidth="0" alignment="left" fontID="2" saveSlotID="4" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="name" shadowColor="#000000"/>
+			<object type="text" objectName="text_12" x="33" y="80" textType="party member" textWidth="38" alignment="right" fontID="2" saveSlotID="4" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="level" shadowColor="#000000"/>
+			<object type="text" objectName="text_11" x="92" y="80" textType="party member" textWidth="78" alignment="right" fontID="2" saveSlotID="4" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" partyMemberID="0" partyMemberTextType="max hp" shadowColor="#000000"/>
+			<object type="text" objectName="text_10" x="16" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="4" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="30" systemString="true" shadowColor="#000000"/>
+			<object type="text" objectName="text_9" x="73" y="80" textType="string" textWidth="0" alignment="left" fontID="2" saveSlotID="4" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" stringID="32" systemString="true" shadowColor="#000000"/>
+			<object type="image" objectName="image_64" x="192" y="16" scaledToWidth="0" scaledToHeight="0" saveSlotID="4" scaled="false" imageType="party member" memberID="0" graphic="face"/>
+			<object type="selectable area" objectName="saveSlot4" x="8" y="8" width="149" height="40">
+				<events>
+					<highlighted type="topLevelEvent"/>
+					<leftArrow type="topLevelEvent"/>
+					<rightArrow type="topLevelEvent"/>
+					<upArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot3"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot3"/>
+					</upArrow>
+					<downArrow type="topLevelEvent">
+						<event type="playSystemSoundEffect" effect="Cursor"/>
+						<event type="changeSelectedArea" objectName="saveSlot5"/>
+						<event type="scrollArea" objectName="scrollArea" scrollTo="childObject" childName="frmSaveSlot5"/>
+					</downArrow>
+					<selected type="topLevelEvent"/>
+					<canceled type="topLevelEvent"/>
+				</events>
+				<object type="text" objectName="text_20" x="8" y="8" textType="plain text" textWidth="0" alignment="left" fontID="2" saveSlotID="4" enabledColor="#82aaff-#19388e" disabledColor="#f0faff-#3899f6" plainText="File: " shadowColor="#000000"/>
+				<object type="text" objectName="text_19" x="103" y="8" textType="plain text" textWidth="38" alignment="right" fontID="2" saveSlotID="4" enabledColor="#f0faff-#3899f6" disabledColor="#f0faff-#3899f6" plainText="4" shadowColor="#000000"/>
+			</object>
+		</object>
+	</object>
+</openrpgmaker-mainmenulayout>

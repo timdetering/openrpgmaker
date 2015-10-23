@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openrpgmaker-skill name="Skill0000" description="" type="0" mpConsumed="0" isMPNumber="true">
+	<data target="one enemy" effectRating="0" successRate="0" battleAnimationID="0" globalAnimationID="0" attackInfluence="0" wisdomInfluence="0" variance="0" changeHP="false" changeMP="false" changeAttack="false" changeDefense="false" changeWisdom="false" changeAgility="false" absorb="false" ignoreDefense="false">
+		<attributes reduceResistance="false">
+			00000000000000000
+		</attributes>
+		<conditions inflictConditions="true" percentEffectiveness="100">
+			0000000000
+		</conditions>
+		<animationSettings>
+			<character movementBeforeAttack="none" animationPose="0"/>
+			<character movementBeforeAttack="none" animationPose="0"/>
+			<character movementBeforeAttack="none" animationPose="0"/>
+			<character movementBeforeAttack="none" animationPose="0"/>
+			<monster movementBeforeAttack="none" animationPose="0"/>
+			<monster movementBeforeAttack="none" animationPose="0"/>
+		</animationSettings>
+	</data>
+</openrpgmaker-skill>

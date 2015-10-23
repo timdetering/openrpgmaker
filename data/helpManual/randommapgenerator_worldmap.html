@@ -1,0 +1,40 @@
+<html>
+	<head><link rel="stylesheet" type="text/css" href="style.css"/></head>
+	<body>
+		<span style="font-family: monospace; font-size: 12pt;">[<a href="userinterfaces.html">User Interfaces</a>]-&gt;[<a href="randommapgenerator.html">Random Map Generator</a>]-&gt;[World Map Generator]</span><br/><br/>
+		<img src="images/RandomMapGenerator_WorldMapGenerator.png"/><br/>
+		<dl>
+			<dt>Name</dt>
+			<dd>The name for the generated map.</dd>
+			<dt>Map Size</dt>
+			<dd>The size of the generated map.</dd>
+			<dt>Num Continents</dt>
+			<dd>The number of different continent terrain to use (between 1 and 5).<br/>
+					<strong>NOTE</strong>: This does not indicate the number of continents to be placed.</dd>
+			<dt>Water Tile</dt>
+			<dd>The tile used for placing water surrounding the continents.</dd>
+			<dt>Blank Tile</dt>
+			<dd>The tile used to fill in the hero layer and upper layer (should be filled with the transparent color magenta).</dd>
+			<dt>Continent -&gt; Number</dt>
+			<dd>The continent currently being edited (between 1 and &quot;Num Continents&quot;).</dd>
+			<dt>Continent -&gt; Num Terrain</dt>
+			<dd>The number of different terrain tiles to be placed on the continent (between 0 and 6).</dd>
+			<dt>Continent -&gt; Tile</dt>
+			<dd>The tile used for the continent.</dd>
+			<dt>Continent -&gt; Amount</dt>
+			<dd>Roughly how many continents of this type to place.</dd>
+			<dt>Continent -&gt; Size</dt>
+			<dd>The rough size of each continent of this type.<br/>
+					<strong>NOTE</strong>: Placing a lot of medium sized continents could result in one giant continent depending
+					on the size of the map.</dd>
+			<dt>Terrain -&gt; Number</dt>
+			<dd>The terrain currently being edited (N/A if the current continent has 0 terrain).</dd>
+			<dt>Terrain -&gt; Tile</dt>
+			<dd>The tile used for this terrain (will be placed on the hero layer).</dd>
+			<dt>Terrain -&gt; Amount</dt>
+			<dd>Roughly how many patches of this terrain to place on the continent.</dd>
+			<dt>Terrain -&gt; Size</dt>
+			<dd>The rough size of each patch of terrain.</dd>
+		</dl>
+	</body>
+</html>

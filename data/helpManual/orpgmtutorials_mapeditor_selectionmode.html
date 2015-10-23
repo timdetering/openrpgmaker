@@ -1,0 +1,67 @@
+<html>
+	<head><link rel="stylesheet" type="text/css" href="style.css"/></head>
+	<body>
+		<span style="font-family: monospace; font-size: 12pt;">[<a href="orpgmtutorials.html">Open RPG Maker Tutorials</a>]-&gt;[<a href="orpgmtutorials_mapeditor.html">Using the Map Editor</a>]-&gt;[Selection Mode]</span><br/><br/>
+		<table style="border-width: 0px;">
+			<tr>
+				<td>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The selection mode allows you to copy sections of a map, and paste them elsewhere (even on other maps).
+					Right clicking after drawing a selection will open the following context menu on the right.<br/><br/>
+					<strong>NOTE:</strong> Some context menu commands may be grayed out depending on the situation.
+				</td>
+				<td style="text-align: right;"><img src="images/Tutorials_MapEditor/SelectionMode/ContextMenu.png"/></td>
+			</tr>
+		</table>
+		<dl>
+			<dt>Copy</dt>
+			<dd>
+				Copies the tiles in the current selection (only the current layer is copied), then clears the selection.
+			</dd>
+			<dt>Cut</dt>
+			<dd>
+				Same as copy, but deletes the selection afterward rather than simply clearing it.
+			</dd>
+			<dt>Paste</dt>
+			<dd>
+				Pastes the copied selection data into the current map on the current layer. The pasted selection
+				will not be anchored, and will be postitioned in the center of the view.
+			</dd>
+			<dt>Delete</dt>
+			<dd>
+				Fills the current selection with the tile selection data, then clears the selection.
+			</dd>
+			<dt>Duplicate</dt>
+			<dd>
+				Same as doing copy then paste.
+			</dd>
+			<dt>Clear Selection</dt>
+			<dd>
+				Deselects anything that has already been selected.
+			</dd>
+			<dt>Anchor Selection</dt>
+			<dd>
+				Anchors the floating selection to the current layer.
+			</dd>
+			<dt>Detach Selection</dt>
+			<dd>
+				Detaches the current selection, which is the same as cutting and pasting it.
+			</dd>
+		</dl>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detached (floating) selections can be moved around the map by pressing the left mouse button anywhere
+		inside the selection, then moving the mouse around. Releasing the left mouse button will place the
+		selection at that location (though it will still be floating, and can therefore be moved again before
+		anchoring it). The difference between a detached (floating) selection and an anchored one, simply look
+		at the outline of the selection, if it is moving clock-wise around the selection then it is detached,
+		otherwise if it is not moving, then it is anchored.<br/>
+		<table>
+			<tr>
+				<td style="text-align: center;"><img src="images/Tutorials_MapEditor/SelectionMode/AnchoredSelection.png"/></td>
+				<td style="text-align: center;"><img src="images/Tutorials_MapEditor/SelectionMode/DetachedSelection.gif"/></td>
+			</tr>
+			<tr>
+				<td>&nbsp;&nbsp;Anchored Selection&nbsp;&nbsp;</td>
+				<td>&nbsp;&nbsp;Detached Selection&nbsp;&nbsp;</td>
+			</tr>
+		</table>
+	</body>
+</html>
